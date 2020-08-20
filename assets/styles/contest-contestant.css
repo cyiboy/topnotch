@@ -97,6 +97,9 @@ textarea {
   color: white;
   width: fit-content;
 }
+.fa-heart{
+  cursor: pointer;
+}
 
 /* FOOTER */
 .footer {
@@ -124,6 +127,9 @@ textarea {
   }
 }
 @media (max-width: 991px) {
+  .contestant{
+    overflow-x: hidden !important;
+  }
   .contestant-details {
     padding-left: 2px;
     padding-right: 34px;
