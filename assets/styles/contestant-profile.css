@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif !important;
+}
+*:focus {
+  box-shadow: none !important;
+}
+textarea {
+  resize: none;
+}
+/* UTILITIES */
+.contest-title {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+  color: rgba(225, 43, 43, 0.83);
+}
+/* Header */
+.navbar-toggler {
+  padding: 0px;
+}
+.navbar-nav {
+  width: 100%;
+}
+.navbar-nav .nav-item {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+.navbar-nav .nav-link {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: black;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: rgba(225, 43, 43, 0.83);
+  text-decoration: underline;
+}
+/* CONTESTANT PROFILE */
+.contestant-profile {
+  margin-bottom: 250px;
+}
+.contestant-profile .contest-title {
+  margin-top: 100px;
+  margin-bottom: 81px;
+}
+.contestant-likes span {
+  color: rgba(225, 43, 43, 0.83);
+}
+.contestant-details p {
+  margin-top: 29px;
+}
+.details-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+.details {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+}
+.no-likes {
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: 0.125em;
+}
+.bottons {
+  margin-top: 150px;
+}
+.vote-btn {
+  padding: 23px 30px;
+  background: rgba(225, 43, 43, 0.83);
+  border-radius: 10px;
+  color: white;
+}
+.share-btn {
+  border: 1px solid rgba(225, 43, 43, 0.83);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 23px 30px;
+  background: white;
+  border-radius: 10px;
+  color: black;
+}
+.btn-icon {
+  padding-right: 25px;
+}
+.share-btn {
+  margin-left: 91px;
+}
+/* MODAL */
+.modal-backdrop {
+  background: rgba(225, 43, 43, 0.49);
+}
+.modal-header {
+  border-bottom: none !important;
+  padding-top: 20px;
+}
+.modal-header h5 {
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 41px;
+  color: rgba(225, 43, 43, 0.83);
+}
+.contestant-details .modal-dialog p {
+  margin-top: 20px !important;
+  margin-bottom: 30px;
+}
+.modal-body {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+}
+.modal-body input {
+  border: 1px solid rgba(225, 43, 43, 0.83);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 35px 21px;
+}
+.modal-footer {
+  border-top: none !important;
+}
+.pay-btn {
+  background: rgba(225, 43, 43, 0.83);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  padding: 25px 66px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 91px;
+}
+.copywrite {
+  text-align: center;
+  margin-top: 45px;
+  font-size: 18px;
+  line-height: 21px;
+}
+@media (max-width: 992px) {
+  .details-title {
+    font-size: 19px;
+    text-transform: capitalize;
+  }
+  .details {
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 23px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .navbar {
+    padding: 0px 0px;
+  }
+  .contestant-profile {
+    margin-bottom: 150px;
+  }
+  .details-title {
+    font-size: 17px;
+    text-transform: capitalize;
+  }
+  .details {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 23px;
+  }
+  .share-btn {
+    margin-left: 11px;
+  }
+  .bottons {
+    margin-top: 50px;
+  }
+}
