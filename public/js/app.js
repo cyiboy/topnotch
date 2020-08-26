@@ -29,25 +29,40 @@ var firebaseConfig = {
   });
   
   }else{
+    db.collection("NewsLetter").add({
+      email: email,
+       })
+    .then(function(docRef) {
+      iziToast.success({
+        title: 'OK',
+        position: 'topRight',
+        message: 'Successfully inserted record!',
+    });
+    })
+    .catch(function(error) {
+     console.log(error)
+    });}}
+ document.getElementById("partner-btn").addEventListener("click", partner, {passive: true});
+ function partner(){
+   var email = document.getElementById('partner-email').value
+   var fname = document.getElementById('partner-fullname').value
+   var message = document.getElementById('partner-message').value
+   console.log(email, fname, message);
+   db.collection("partners").add({
+    email: email,
+    fullname: fname,
+    message: message
+     })
+  .then(function(docRef) {
     iziToast.success({
       title: 'OK',
-      message: 'Successfully inserted record!',
+      position: 'topRight',
+      message: 'Successfully sent, would get back to you soon',
   });
-  
-  }
-  
-db.collection("users").add({
-  first: "Ada",
-  last: "Lovelace",
-  born: 1815
-})
-.then(function(docRef) {
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-  console.error("Error adding document: ", error);
-});
-
-
+  })
+  .catch(function(error) {
+   console.log(error)
+  });
  }
+  
        

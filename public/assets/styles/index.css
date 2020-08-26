@@ -305,3 +305,10 @@ textarea {
         text-align: center;
     }
 }
+html {
+    scroll-behavior: smooth;
+    font-size: calc(1em + 1vw);
+  }
+  
+ 
+ 

@@ -88,6 +88,7 @@
               The Life Of The <span class="intro-text-color">Youths</span>...
             </p>
             <div class="intro-text-btn">
+                <a href="#explore">
               <button class="btn general-btn">
                 <span class="btn-text">learn more</span>
                 <svg
@@ -104,6 +105,7 @@
                   />
                 </svg>
               </button>
+            </a>
             </div>
           </div>
         </div>
@@ -117,7 +119,7 @@
     </div>
 
     <!-- EXPLORE -->
-    <div class="container explore">
+    <div id="explore"class="container explore">
       <div class="section-headings">
         <p>explore</p>
       </div>
@@ -137,8 +139,11 @@
               society. We are registered with Corporate Affairs Commission (CAC)
             </p>
             <div class="explore-sec-btn">
-              <button class="btn general-btn">
-                <span class="btn-text">learn more</span>
+                <a href="contest.html">
+              <button class="btn general-btn" >
+                  
+                  
+                <span class="btn-text" >learn more</span>
                 <svg
                   class="d-none d-md-inline-block"
                   width="38"
@@ -153,6 +158,7 @@
                   />
                 </svg>
               </button>
+              <a/>
             </div>
           </div>
         </div>
@@ -264,11 +270,11 @@
         <div class="row subscribe-form">
           <div class="col-md-5 offset-md-3">
             <input
-              type="text"
+              type="email"
               class="form-control subscribe-input"
               placeholder="enter email"
               name="email"
-              id=""
+              id="newsletterEmail" 
             />
           </div>
           <div class="col-md-3">
@@ -297,20 +303,22 @@
         <div class="col-md-6 col-lg-5">
           <form>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email" />
+              <input type="email" class="form-control" placeholder="Email" id="partner-email" required />
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Full-name" />
+              <input type="text" class="form-control" placeholder="Full-name" id="partner-fullname" required/>
             </div>
             <div class="form-group">
               <textarea
                 class="form-control"
                 placeholder="Message"
                 rows="3"
+                required
+                id="partner-message"
               ></textarea>
             </div>
             <div class="text-center">
-              <button class="btn general-btn">Submit</button>
+              <button id="partner-btn" type="button" class="btn general-btn">Submit</button>
             </div>
           </form>
         </div>

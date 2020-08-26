@@ -14,7 +14,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="assets/styles/contest-landing.css" />
-    <title>Contest Landing</title>
+    <title>Miss Queen AFRICA</title>
   </head>
   <body>
     <!-- HEADER -->
@@ -91,7 +91,7 @@
       <div class="row explore-sec justify-content-between">
         <div class="col-md-6">
           <img
-            src="assets/img/contest-landing-img.png"
+            src="assets/img/contest-img.png"
             class="img-fluid"
             alt=""
           />
@@ -99,9 +99,9 @@
 
         <div class="col-md-6">
           <div class="show-info-wrapper">
-            <h3 class="show-title">MR AND MISS TOP MODEL AFRICA</h3>
+            <h3 class="show-title">MISS AFRICA QUEEN</h3>
             <div class="show-info">
-              <p>june 12 2020</p>
+              <p>September 1 2020</p>
               <p>
                 Topnotch Entertainment present MR AND MISS TOP MODEL AFRICA
                 2020. It an online pageantry with no ticket sales, no live
@@ -119,7 +119,7 @@
               </p>
             </div>
             <div class="show-time">
-              <p>01:02:30:05</p>
+              <p id="contest-countdown" >01:02:30:05</p>
             </div>
             <div class="row">
               <div class="col-md-6 text-center">
@@ -168,5 +168,35 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("aug 31, 2020 15:37:25").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get today's date and time
+          var now = new Date().getTime();
+            
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+            
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          // Output the result in an element with id="demo"
+          document.getElementById("contest-countdown").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+            
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("contest-countdown").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+        </script>
   </body>
 </html>
