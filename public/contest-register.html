@@ -17,6 +17,10 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/izitoast/dist/css/iziToast.min.css"
+  />
     <link rel="stylesheet" href="assets/styles/contest-register.css" />
     <title>Contest Register </title>
   </head>
@@ -95,7 +99,7 @@
       <div class="row">
         <div class="col-md-8">
           <h3 class="contest-title animate__animated animate__infinite">
-            MR AND MISS TOP MODEL AFRICA
+            MISS AFRICA QUEEN
           </h3>
 
           <form>
@@ -103,15 +107,15 @@
             <div id="personal-info">
               <p class="form-title">personal information</p>
               <div class="form-group">
-                <label for="status">status</label>
-                <input
-                  type="text"
-                  class="form-control form-input"
-                  id="status"
-                  placeholder="mr/miss"
-                />
+                <label>status</label>
+                <select id="status" class="form-control">
+                  <option selected>select Status</option>
+                  <option>Mr</option>
+                  <option>Miss</option>
+                                    
+                </select>
               </div>
-
+              
               <div class="form-group">
                 <label for="name">full name</label>
                 <input
@@ -119,6 +123,7 @@
                   class="form-control form-input"
                   id="name"
                   placeholder="enter full name"
+                  required
                 />
               </div>
 
@@ -129,6 +134,7 @@
                   class="form-control form-input"
                   id="email"
                   placeholder="email address"
+                  required
                 />
               </div>
 
@@ -137,8 +143,9 @@
                 <input
                   type="date"
                   class="form-control form-input"
-                  id=""
-                  placeholder="email address"
+                  id="DOB"
+                  placeholder="date of birth"
+                  required
                 />
               </div>
 
@@ -148,13 +155,14 @@
                   type="text"
                   class="form-control form-input"
                   id="address"
+                  required
                   placeholder="address"
                 />
               </div>
 
               <div class="form-group">
                 <label>state/province</label>
-                <select class="form-control">
+                <select id="state" class="form-control">
                   <option selected>select state or province</option>
                   <option>rivers state</option>
                   <option>lgos state</option>
@@ -165,7 +173,7 @@
 
               <div class="form-group">
                 <label>country</label>
-                <select class="form-control">
+                <select id="country"     class="form-control">
                   <option selected>select country</option>
                   <option>Nigeria</option>
                   <option>ghana</option>
@@ -202,6 +210,7 @@
                 <textarea
                   class="form-control"
                   id="expression"
+                  required
                   placeholder="say something nice about yourself"
                   rows="3"
                 ></textarea>
@@ -213,6 +222,7 @@
                   type="text"
                   class="form-control form-input"
                   id="insta"
+                  required
                   placeholder="@username"
                 />
               </div>
@@ -224,7 +234,7 @@
                     type="file"
                     class="custom-file-input"
                     id="customFile"
-                  />
+                    />
                   <label class="custom-file-label" for="customFile"
                     >upload</label
                   >
@@ -273,6 +283,11 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/izitoast/dist/js/iziToast.min.js"></script>
+   
     <script>
       let btn = document.querySelector("#continue-btn");
       let personalInfo = document.querySelector("#personal-info");
@@ -280,8 +295,25 @@
 
       btn.addEventListener("click", function (e) {
         e.preventDefault();
-        personalInfo.style.display = "none";
+        let status = document.querySelector("#status").value;
+        let name = document.querySelector("#name").value;
+        let email= document.querySelector("#email").value;
+        let DOB = document.querySelector("#DOB").value;
+        let address = document.querySelector("#address").value;
+        let state = document.querySelector("#state").value;
+        let country = document.querySelector("#country").value;
+   console.log(state,status, name, email, DOB, address, country)  
+ if(state === 'select state or province' || status ==='select State' || name=== '' || email ==='' || DOB===''|| address===''||country==='' ){
+  iziToast.warning({
+      title: 'Warning',
+      message: 'fill all required imformation',
+  });
+  
+ }else{
+  personalInfo.style.display = "none"; 
         generalInfo.style.display = "block";
+ }
+      
       });
 
       $(".custom-file-input").on("change", function () {

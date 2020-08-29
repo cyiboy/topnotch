@@ -24,8 +24,8 @@ var firebaseConfig = {
    console.log(email)
   if(email == ''){
     iziToast.warning({
-      title: 'OK',
-      message: 'Successfully inserted record!',
+      title: 'Warning',
+      message: 'Email is required',
   });
   
   }else{
