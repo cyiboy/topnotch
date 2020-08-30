@@ -26,8 +26,10 @@
   </head>
   <body>
     <!-- HEADER -->
+    <div id="loader" class="loading">Loading&#8230;</div>  
+   
     <div class="container-fluid pl-0">
-      <div class="row">
+       <div class="row">
         <div class="col-md-6 pr-0">
           <nav class="navbar navbar-expand-md">
             <button
@@ -181,6 +183,7 @@
                   <option>china</option>
                 </select>
               </div>
+            
 
               <div class="form-btn">
                 <button id="continue-btn" class="btn general-btn">
@@ -234,7 +237,9 @@
                     type="file"
                     class="custom-file-input"
                     id="customFile"
+                    required
                     />
+                  
                   <label class="custom-file-label" for="customFile"
                     >upload</label
                   >
@@ -242,7 +247,7 @@
               </div>
 
               <div class="form-btn">
-                <button type="submit" class="btn general-btn">submit</button>
+                <button type="button" id="summit" class="btn general-btn">submit</button>
               </div>
             </div>
           </form>
@@ -286,23 +291,30 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>   
     <script src="https://unpkg.com/izitoast/dist/js/iziToast.min.js"></script>
+    <script src="js/app.js"></script> 
    
     <script>
-      let btn = document.querySelector("#continue-btn");
-      let personalInfo = document.querySelector("#personal-info");
+       var loader = document.getElementById("loader")
+        //loader.style.display = "none";
+       let personalInfo = document.querySelector("#personal-info");
       let generalInfo = document.querySelector("#general-info");
-
+      let btn2 = document.querySelector("#summit");
+      let btn = document.querySelector("#continue-btn");
+      let status, name, email, DOB, address, state, country
+       var URL
+       let number, expression, insta
       btn.addEventListener("click", function (e) {
         e.preventDefault();
-        let status = document.querySelector("#status").value;
-        let name = document.querySelector("#name").value;
-        let email= document.querySelector("#email").value;
-        let DOB = document.querySelector("#DOB").value;
-        let address = document.querySelector("#address").value;
-        let state = document.querySelector("#state").value;
-        let country = document.querySelector("#country").value;
-   console.log(state,status, name, email, DOB, address, country)  
+         status = document.querySelector("#status").value;
+         name = document.querySelector("#name").value;
+         email= document.querySelector("#email").value;
+         DOB = document.querySelector("#DOB").value;
+         address = document.querySelector("#address").value;
+         state = document.querySelector("#state").value;
+         country = document.querySelector("#country").value;
+        
  if(state === 'select state or province' || status ==='select State' || name=== '' || email ==='' || DOB===''|| address===''||country==='' ){
   iziToast.warning({
       title: 'Warning',
@@ -316,13 +328,82 @@
       
       });
 
-      $(".custom-file-input").on("change", function () {
+
+      btn2.addEventListener("click", function (e){
+        e.preventDefault();
+        loader.style.display = "block";
+         number = document.querySelector("#number").value;
+         expression = document.querySelector("#expression").value;
+         insta = document.querySelector("#insta").value;
+         
+   
+        uploadimage();
+       
+       
+   
+      })
+
+      function uploadimage(){
+      
+      // Created a Storage Reference with root dir
+      var storageRef = firebase.storage().ref();
+      // Get the file from DOM
+      var file = document.getElementById("customFile").files[0];
+      console.log(file);
+      
+      //dynamically set reference to the file name
+      var thisRef = storageRef.child("miss africa queen/"+name);
+
+      //put request upload file to firebase storage
+      thisRef.put(file).then(function(snapshot) {
+        thisRef.getDownloadURL().then(function(downloadURL) {
+          URL =  downloadURL
+                console.log('File available at', URL )
+                upload()
+            });
+ 
+      });
+    }
+    function upload(){
+
+              
+     db.collection("missafricaqueen").add({
+    email: email,
+     fullname: name,
+    state: state,
+    status: status,
+    DOB: DOB,
+    address: address,
+    country: country,
+    expression: expression,
+    number: number,
+    insta: insta,
+  image: URL,
+   vote: 0
+    
+ 
+     })
+  .then(function(docRef) {
+    loader.style.display = "none";
+    window.location.href = "constestant-profile.html?userid=" + docRef.id;
+
+  })
+  .catch(function(error) {
+   console.log(error.message, URL)
+  });
+   
+}
+
+      
+$(".custom-file-input").on("change", function () {
         var fileName = $(this).val().split("\\").pop();
         $(this)
           .siblings(".custom-file-label")
           .addClass("selected")
           .html(fileName);
       });
+
     </script>
+      
   </body>
 </html>

@@ -14,55 +14,11 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   var db = firebase.firestore();
+ // var storage = firebase.storage();
+ // var storageRef = storage.ref();
 
 
- // index page 
- document.getElementById("newsletter_btn").addEventListener("click", newsletter, {passive: true});
- function newsletter (){
-   console.log('i was here')
-   var email = document.getElementById('newsletterEmail').value
-   console.log(email)
-  if(email == ''){
-    iziToast.warning({
-      title: 'Warning',
-      message: 'Email is required',
-  });
-  
-  }else{
-    db.collection("NewsLetter").add({
-      email: email,
-       })
-    .then(function(docRef) {
-      iziToast.success({
-        title: 'OK',
-        position: 'topRight',
-        message: 'Successfully inserted record!',
-    });
-    })
-    .catch(function(error) {
-     console.log(error)
-    });}}
- document.getElementById("partner-btn").addEventListener("click", partner, {passive: true});
- function partner(){
-   var email = document.getElementById('partner-email').value
-   var fname = document.getElementById('partner-fullname').value
-   var message = document.getElementById('partner-message').value
-   console.log(email, fname, message);
-   db.collection("partners").add({
-    email: email,
-    fullname: fname,
-    message: message
-     })
-  .then(function(docRef) {
-    iziToast.success({
-      title: 'OK',
-      position: 'topRight',
-      message: 'Successfully sent, would get back to you soon',
-  });
-  })
-  .catch(function(error) {
-   console.log(error)
-  });
- }
-  
+// index page 
+// contest reqigation
+//var mountainsRef = storageRef.child('assets/img/twitter.png');
        
