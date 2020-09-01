@@ -162,3 +162,7 @@ textarea {
         letter-spacing: 0.13em;
     }
 }
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+  }

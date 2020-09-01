@@ -161,29 +161,29 @@
                   placeholder="address"
                 />
               </div>
-
               <div class="form-group">
-                <label>state/province</label>
-                <select id="state" class="form-control">
-                  <option selected>select state or province</option>
-                  <option>rivers state</option>
-                  <option>lgos state</option>
-                  <option>osun state</option>
-                  <option>abuja</option>
-                </select>
-              </div>
+                  <label for="state/province">state/province</label>
+                  <input
+                    type="text"
+                    class="form-control form-input"
+                    id="state"
+                    required
+                    placeholder="state"
+                  />
+                </div>
+                <div class="form-group">
+                    <label for="country">country</label>
+                    <input
+                      type="text"
+                      class="form-control form-input"
+                      id="country"
+                      required
+                      placeholder="country"
+                    />
+                  </div>
+              
 
-              <div class="form-group">
-                <label>country</label>
-                <select id="country"     class="form-control">
-                  <option selected>select country</option>
-                  <option>Nigeria</option>
-                  <option>ghana</option>
-                  <option>south africa</option>
-                  <option>china</option>
-                </select>
-              </div>
-            
+             
 
               <div class="form-btn">
                 <button id="continue-btn" class="btn general-btn">
@@ -201,7 +201,7 @@
               <div class="form-group">
                 <label for="number">phone number</label>
                 <input
-                  type="text"
+                  type="number"
                   class="form-control form-input"
                   id="number"
                   placeholder="phone number"
@@ -297,7 +297,7 @@
    
     <script>
        var loader = document.getElementById("loader")
-        //loader.style.display = "none";
+        loader.style.display = "none";
        let personalInfo = document.querySelector("#personal-info");
       let generalInfo = document.querySelector("#general-info");
       let btn2 = document.querySelector("#summit");
@@ -315,7 +315,7 @@
          state = document.querySelector("#state").value;
          country = document.querySelector("#country").value;
         
- if(state === 'select state or province' || status ==='select State' || name=== '' || email ==='' || DOB===''|| address===''||country==='' ){
+ if(state === '' || status ==='' || name=== '' || email ==='' || DOB===''|| address===''||country==='' ){
   iziToast.warning({
       title: 'Warning',
       message: 'fill all required imformation',
@@ -385,7 +385,7 @@
      })
   .then(function(docRef) {
     loader.style.display = "none";
-    window.location.href = "constestant-profile.html?userid=" + docRef.id;
+    window.location.href = "contestant-profile.html?userid=" + docRef.id;
 
   })
   .catch(function(error) {

@@ -174,7 +174,7 @@
             </div>
             <div class="row">
               <div class="col-md-6 text-center">
-                <a href="contest-register.html"
+                <a id="register" href="contest-register.html"
                   ><button class="btn general-btn general-btn-white">
                     Register
                   </button></a
@@ -221,8 +221,8 @@
     ></script>
     <script>
         // Set the date we're counting down to
-        var countDownDate = new Date("aug 31, 2020 15:37:25").getTime();
-        
+        var countDownDate = new Date("sept 10, 2020 23:59:59").getTime();
+      
         // Update the count down every 1 second
         var x = setInterval(function() {
         
@@ -246,6 +246,7 @@
           if (distance < 0) {
             clearInterval(x);
             document.getElementById("contest-countdown").innerHTML = "EXPIRED";
+            document.getElementById('register').setAttribute('class','disabled')
           }
         }, 1000);
         </script>
