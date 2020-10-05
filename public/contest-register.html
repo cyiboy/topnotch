@@ -385,7 +385,9 @@
      })
   .then(function(docRef) {
     loader.style.display = "none";
-    window.location.href = "contestant-profile.html?userid=" + docRef.id;
+    jQuery.noConflict(); 
+$('#myModal').modal('show');
+    
 
   })
   .catch(function(error) {
