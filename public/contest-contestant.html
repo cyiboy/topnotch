@@ -14,6 +14,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="assets/styles/contest-contestant.css" />
+    <link rel="icon" href="assets/img/fav.png">
     <title>Contestant</title>
   </head>
   <body>
@@ -89,120 +90,19 @@
     <!-- CONTESTANT -->
     <div class="container contestant">
         <h3 class="contest-title">
-            MR AND MISS TOP MODEL AFRICA
+             MISS AFRICA QUEEN
         </h3>
         <p class="section-heading text-center">contestant</p>
 
-      <div class="row justify-content-between">
+      <div id="root" class="row justify-content-between" style=" margin: 0 5px;">
 
-        <div class="col-md-4 col-lg-3 px-lg-0">
-            <div class="pickgradient d-flex align-items-end">
-                <div class="contestant-details">
-                    <span class=" contestant-name">Segun Agbenro</span> 
-                    <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                </div>
-                <img src="assets/img/contestant-1.png" class="img-fluid" />
-              </div>
-        </div>
-
-        <div class="col-md-4 col-lg-3 px-lg-0">
-            <div class="pickgradient d-flex align-items-end">
-                <div class="contestant-details">
-                    <span class=" contestant-name">Segun Agbenro</span> 
-                    <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                </div>
-                <img src="assets/img/contestant-1.png" class="img-fluid" />
-              </div>
-        </div>
-
-        <div class="col-md-4 col-lg-3 px-lg-0">
-            <div class="pickgradient d-flex align-items-end">
-                <div class="contestant-details">
-                    <span class=" contestant-name">Segun Agbenro</span> 
-                    <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                </div>
-                <img src="assets/img/contestant-1.png" class="img-fluid" />
-              </div>
-        </div>
+       
 
         
 
         
         </div>
-
-        <div class="row justify-content-between">
-
-            <div class="col-md-4 col-lg-3 px-lg-0">
-                <div class="pickgradient d-flex align-items-end">
-                    <div class="contestant-details">
-                        <span class=" contestant-name">Segun Agbenro</span> 
-                        <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                    </div>
-                    <img src="assets/img/contestant-1.png" class="img-fluid" />
-                  </div>
-            </div>
-    
-            <div class="col-md-4 col-lg-3 px-lg-0">
-                <div class="pickgradient d-flex align-items-end">
-                    <div class="contestant-details">
-                        <span class=" contestant-name">Segun Agbenro</span> 
-                        <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                    </div>
-                    <img src="assets/img/contestant-1.png" class="img-fluid" />
-                  </div>
-            </div>
-    
-            <div class="col-md-4 col-lg-3 px-lg-0">
-                <div class="pickgradient d-flex align-items-end">
-                    <div class="contestant-details">
-                        <span class=" contestant-name">Segun Agbenro</span> 
-                        <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                    </div>
-                    <img src="assets/img/contestant-1.png" class="img-fluid" />
-                  </div>
-            </div>
-    
-            
-    
-            
-        </div>
-
-         <div class="row justify-content-between">
-
-                <div class="col-md-4 col-lg-3 px-lg-0">
-                    <div class="pickgradient d-flex align-items-end">
-                        <div class="contestant-details">
-                            <span class=" contestant-name">Segun Agbenro</span> 
-                            <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                        </div>
-                        <img src="assets/img/contestant-1.png" class="img-fluid" />
-                      </div>
-                </div>
-        
-                <div class="col-md-4 col-lg-3 px-lg-0">
-                    <div class="pickgradient d-flex align-items-end">
-                        <div class="contestant-details">
-                            <span class=" contestant-name">Segun Agbenro</span> 
-                            <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                        </div>
-                        <img src="assets/img/contestant-1.png" class="img-fluid" />
-                      </div>
-                </div>
-        
-                <div class="col-md-4 col-lg-3 px-lg-0">
-                    <div class="pickgradient d-flex align-items-end">
-                        <div class="contestant-details">
-                            <span class=" contestant-name">Segun Agbenro</span> 
-                            <span class="float-right votes">343 <i class="fa fa-heart"></i></span>
-                        </div>
-                        <img src="assets/img/contestant-1.png" class="img-fluid" />
-                      </div>
-                </div>
-        
-                
-        
-                
-        </div>
+ 
 
         
 
@@ -241,5 +141,83 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+   
+    <script src="js/app.js"></script> 
+    <script>
+      var data = []
+      db    
+      .collection("missafricaqueen")
+.orderBy("vote", "desc").get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+           console.log(doc.id, " => ", doc.data());
+           var temp = doc.data()
+           var obj = JSON.parse(JSON.stringify(temp))
+obj['id']= doc.id;
+jsonStr = JSON.stringify(obj);
+console.log(obj)
+            data.push(obj)
+        });
+
+       contest();
+    });
+    
+    
+    function contest (){
+      const app = document.getElementById('root')
+data.forEach(Element => {
+const div1 = document.createElement('div')
+div1.setAttribute('class','col-md-4 col-lg-3 px-lg-0')
+div1.setAttribute('style', '    margin-left: 10px;    margin-right: 10px;')
+const div2 = document.createElement('div')
+div2.setAttribute('class','pickgradient d-flex align-items-end')
+const div3 = document.createElement('div')
+div3.setAttribute('class','contestant-details')
+const span1 = document.createElement('span')
+span1.setAttribute('class','contestant-name')
+span1.textContent = Element.fullname
+const span2 = document.createElement('span')
+span2.setAttribute('class','float-right votes')
+span2.textContent = Element.vote
+const img = document.createElement('img')
+ 
+const i = document.createElement('i')
+i.setAttribute('class', 'fa fa-heart')
+
+img.setAttribute("alt", "constatance image");
+img.setAttribute("src", Element.image);
+img.setAttribute('class', 'img-fluid');
+img.setAttribute('style', 'width: 100%;     height:240px');
+ 
+const a = document.createElement('a')
+a.setAttribute('href','contestant-profile.html?userid='+Element.id)
+
+
+
+app.appendChild(div1)
+div1.appendChild(a)
+a.appendChild(div2)
+
+
+div2.appendChild(div3)
+div3.appendChild(span1)
+div3.appendChild(span2)
+span2.appendChild(i)
+div2.appendChild(img)              
+           
+  
+
+})
+
+    }
+
+
+      </script>
   </body>
+
+
 </html>

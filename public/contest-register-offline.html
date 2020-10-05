@@ -254,8 +254,8 @@
                 </div>
               </div>
                 <div class="form-btn">
-                  <script src="https://checkout.flutterwave.com/v3.js"></script>
-                <button type="button" id="summit" class="btn general-btn"   onclick="makePayment()">pay</button>
+                  <script src="https://js.paystack.co/v1/inline.js"></script>
+                <button type="button" id="summit" class="btn general-btn"   onclick="uploadimage()">summit</button>
               </div>
             
              
@@ -409,7 +409,7 @@
     number: number,
     insta: insta,
   image: URL,
-  payment : "online",
+  payment: "offline",
    vote: 0
     
  
@@ -439,30 +439,30 @@ $(".custom-file-input").on("change", function () {
     </script>
        <script>
   
-            function makePayment() {
-    FlutterwaveCheckout({
-      public_key: "FLWPUBK-3b060ce5a8b484e75d7e1e45dea29ee6-X",
-      tx_ref: Math.floor(Math.random() * 100001),
-      amount: 1500,
-      currency: "NGN",
-      payment_optvote: votenions: "card,mobilemoney,ussd",
-      customer: {
-        email:  email,
-        phonenumber: number,
-        name: name,
-      },
-      callback: function (data) { // specified callback function
-        console.log(data);
-        uploadimage();
-      },
-      customizations: {
-        title: "topnotch entertainment",
-        description: "Payment for registration fee",
-        logo: "assets/img/sponsor-2.png",
-      },
-    });
-  }
-               
+          function payWithPaystack() {
+                    
+           
+         
+          
+        
+                   var handler = PaystackPop.setup({
+                       key: 'pk_live_03ae8a1a3828565b4b04ccc87c06ee6c8669471a',
+                       email: email,
+                       amount: 150000,
+                       currency: "NGN",
+                       
+                       callback: function (response) {
+                        //  Upload(response.transaction)
+                          console.log(response)
+                          uploadimage();
+        
+                       },
+                       onClose: function () {
+                           alert('window closed');
+                       }
+                   });
+                   handler.openIframe();
+               }
 
 
                function goBack() {
