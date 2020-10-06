@@ -17,12 +17,12 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="icon" href="assets/img/fav.png">
+    <link rel="icon" href="../assets/img/fav.png">
     <link
     rel="stylesheet"
     href="https://unpkg.com/izitoast/dist/css/iziToast.min.css"
   />
-    <link rel="stylesheet" href="assets/styles/contest-register.css" />
+    <link rel="stylesheet" href="../assets/styles/contest-register.css" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -95,7 +95,7 @@
         <div class="col-6 p-0 d-none d-md-inline-block">
           <div class="position-absolute" style="right: 0px;">
             <img
-              src="assets/img/contest-landing-rectangle.png"
+              src="../assets/img/contest-landing-rectangle.png"
               class="img-fluid"
               alt=""
             />
@@ -109,7 +109,7 @@
       <div class="row">
         <div class="col-md-8">
           <h3 class="contest-title animate__animated animate__infinite">
-            MISS AFRICA QUEEN
+            Mr and Miss Culture Nigeria 2020
           </h3>
           
           <form>
@@ -254,8 +254,8 @@
                 </div>
               </div>
                 <div class="form-btn">
-                  <script src="https://js.paystack.co/v1/inline.js"></script>
-                <button type="button" id="summit" class="btn general-btn"   onclick="uploadimage()">summit</button>
+                  <script src="https://checkout.flutterwave.com/v3.js"></script>
+                <button type="button" id="summit" class="btn general-btn"   onclick="makePayment()">pay</button>
               </div>
             
              
@@ -276,7 +276,7 @@
           <h4 class="modal-title">Awesome!</h4>	
         </div>
         <div class="modal-body">
-          <p class="text-center">Your booking has been confirmed. Check your email for detials.</p>
+          <p class="text-center">Your registration was successfull. contact us on whatapp +234 705 0692 606 for more information about the contest.</p>
         </div>
         <div class="modal-footer">
           <button class="btn btn-success btn-block" data-dismiss="modal" onclick=goBack()>OK</button>
@@ -288,13 +288,13 @@
     <div class="container footer">
       <div class="row justify-content-center">
         <div class="col-3 text-center">
-          <img src="assets/img/instagram.png" class="img-fluid" alt="" />
+          <img src="../assets/img/instagram.png" class="img-fluid" alt="" />
         </div>
         <div class="col-3 text-center">
-          <img src="assets/img/twitter.png" class="img-fluid" alt="" />
+          <img src="../assets/img/twitter.png" class="img-fluid" alt="" />
         </div>
         <div class="col-3 text-center">
-          <img src="assets/img/facebook.png" class="img-fluid" alt="" />
+          <img src="../assets/img/facebook.png" class="img-fluid" alt="" />
         </div>
       </div>
       <div class="copywrite">
@@ -322,7 +322,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>   
     <script src="https://unpkg.com/izitoast/dist/js/iziToast.min.js"></script>
-    <script src="js/app.js"></script> 
+    <script src="../js/app.js"></script> 
    
     <script>
        var loader = document.getElementById("loader")
@@ -373,8 +373,8 @@
    
       })
 
-      function uploadimage(){
-      
+      function uploadimage(randomnumber){
+      var random = randomnumber
       // Created a Storage Reference with root dir
       var storageRef = firebase.storage().ref();
       // Get the file from DOM
@@ -382,22 +382,22 @@
       console.log(file);
       
       //dynamically set reference to the file name
-      var thisRef = storageRef.child("miss africa queen/"+name);
+      var thisRef = storageRef.child("mr and miss culture/"+name);
 
       //put request upload file to firebase storage
       thisRef.put(file).then(function(snapshot) {
         thisRef.getDownloadURL().then(function(downloadURL) {
           URL =  downloadURL
                 console.log('File available at', URL )
-                upload()
+                upload(random)
             });
  
       });
     }
-    function upload(){
+    function upload(random){
 
               
-     db.collection("missafricaqueen").add({
+     db.collection("mrandmissculture").add({
     email: email,
      fullname: name,
     state: state,
@@ -408,8 +408,9 @@
     expression: expression,
     number: number,
     insta: insta,
+    paymentRef: random,
   image: URL,
-  payment: "offline",
+  payment : "online",
    vote: 0
     
  
@@ -439,34 +440,37 @@ $(".custom-file-input").on("change", function () {
     </script>
        <script>
   
-          function payWithPaystack() {
-                    
-           
-         
-          
-        
-                   var handler = PaystackPop.setup({
-                       key: 'pk_live_03ae8a1a3828565b4b04ccc87c06ee6c8669471a',
-                       email: email,
-                       amount: 150000,
-                       currency: "NGN",
-                       
-                       callback: function (response) {
-                        //  Upload(response.transaction)
-                          console.log(response)
-                          uploadimage();
-        
-                       },
-                       onClose: function () {
-                           alert('window closed');
-                       }
-                   });
-                   handler.openIframe();
-               }
+            function makePayment() {
+             var randomnumber = Math.floor(Math.random() * 100001)
+    FlutterwaveCheckout({
+    
+      public_key: "FLWPUBK-3b060ce5a8b484e75d7e1e45dea29ee6-X",
+      tx_ref: randomnumber,
+      amount: 1000,
+      currency: "NGN",
+      payment_optvote: "card,mobilemoney,ussd",
+
+      customer: {
+        email:  email,
+        phonenumber: number,
+        name: name,
+      },
+      callback: function (data) { // specified callback function
+        console.log(data);
+        uploadimage(randomnumber);
+      },
+      customizations: {
+        title: "topnotch entertainment",
+        description: "Payment for registration fee",
+        logo: "../assets/img/sponsor-2.png",
+      },
+    });
+  }
+               
 
 
                function goBack() {
-                location.replace("contest.html");
+                location.replace("index.html");
 }
         </script>
   </body>

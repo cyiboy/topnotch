@@ -20,5 +20,5 @@ var firebaseConfig = {
 
 // index page 
 // contest reqigation
-//var mountainsRef = storageRef.child('assets/img/twitter.png');
+//var mountainsRef = storageRef.child('..//assets/img/twitter.png');
        

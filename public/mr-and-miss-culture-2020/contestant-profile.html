@@ -21,8 +21,8 @@
     rel="stylesheet"
     href="https://unpkg.com/izitoast/dist/css/iziToast.min.css"
   />
-  <link rel="icon" href="assets/img/fav.png">
-    <link rel="stylesheet" href="assets/styles/contestant-profile.css" />
+  <link rel="icon" href="..//..//assets/img/fav.png">
+    <link rel="stylesheet" href="..//..//assets/styles/contestant-profile.css" />
     <title>Contestant Profile</title>
   </head>
   <body>
@@ -31,7 +31,7 @@
       let params = new URLSearchParams(location.search);
       var id = params.get('userid')
       if (id === null) {
-          window.location.replace("contest.html");
+          window.location.replace("index.html");
       }
       
    
@@ -95,7 +95,7 @@
         <div class="col-6 p-0 d-none d-md-inline-block">
           <div class="position-absolute" style="right: 0px;">
             <img
-              src="assets/img/contest-landing-rectangle.png"
+              src="..//..//assets/img/contest-landing-rectangle.png"
               class="img-fluid"
               alt=""
             />
@@ -106,11 +106,11 @@
 
     <!-- CONTESTANT -->
     <div class="container contestant-profile">
-      <h3 class="contest-title">MISS AFRICA QUEEN</h3>
+      <h3 class="contest-title">MR AND MISS CULTURE 2020</h3>
       <div class="row justify-content-between">
         <div class="col-md-5">
           <div>
-            <img id="image"src="" class="img-fluid" alt="" />
+            <img id="image"src="" class="img-fluid" alt="" style="border-radius: 10px; filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.69));"/>
             <div class="contestant-likes mt-2">
               <span><i class="fa fa-heart no-likes"></i></span>
               <span id="like" class="no-likes ml-2"></span>
@@ -153,18 +153,30 @@
             </div>
              
           </div>
+          <div style="
+          margin-top: 40px;
+      ">
+            <span class="spam">Voting start in:</span>
+          </div>
+        
+          <div class="show-time">
+            <p id="contest-countdown"></p>
+          </div>
           <div class="bottons text-center">
             <button
             id="vote"
               data-toggle="modal"
               data-target="#exampleModal"
               class="btn vote-btn"
-            >
+          disabled
+              >
               <span class="btn-icon"><i class="fa fa-star-o"></i></span>
               <span>vote</span>
             </button>
             <button
-            id="share" class="btn share-btn">
+            id="share" class="btn share-btn" style="
+            margin-top: 10px;
+        ">
               <span class="btn-icon"><i class="fa fa-share-alt"></i></span>
               <span>share</span>
             </button>
@@ -286,13 +298,13 @@
     <div class="container footer">
       <div class="row justify-content-center">
         <div class="col-3 text-center">
-          <img src="assets/img/instagram.png" class="img-fluid" alt="" />
+          <img src="..//assets/img/instagram.png" class="img-fluid" alt="" />
         </div>
         <div class="col-3 text-center">
-          <img src="assets/img/twitter.png" class="img-fluid" alt="" />
+          <img src="..//assets/img/twitter.png" class="img-fluid" alt="" />
         </div>
         <div class="col-3 text-center">
-          <img src="assets/img/facebook.png" class="img-fluid" alt="" />
+          <img src="..//assets/img/facebook.png" class="img-fluid" alt="" />
         </div>
       </div>
       <div class="copywrite">
@@ -320,7 +332,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
     <script src="https://unpkg.com/izitoast/dist/js/iziToast.min.js"></script>
-    <script src="js/app.js"></script> 
+    <script src="../js/app.js"></script> 
     <script>
       var voten 
       var state = document.getElementById("state")
@@ -353,7 +365,7 @@
   
   
   
-    var docRef = db.collection("missafricaqueen").doc(id);
+    var docRef = db.collection("mrandmissculture").doc(id);
 
 docRef.get().then(function(doc) {
     if (doc.exists) {
@@ -460,7 +472,7 @@ closeButton.addEventListener('click', event => {
       },
       callback: function (data) { // specified callback function
         console.log(data);
-        var vote = db.collection("missafricaqueen").doc(id);
+        var vote = db.collection("mrandmissculture").doc(id);
 
 // Set the "capital" field of the city 'DC'
 return vote.update({
@@ -477,7 +489,7 @@ return vote.update({
       customizations: {
         title: "topnotch entertainment",
         description: "Payment for registration fee",
-        logo: "assets/img/sponsor-2.png",
+        logo: "..//assets/img/sponsor-2.png",
       },
     });
   }
@@ -485,7 +497,37 @@ return vote.update({
 
 
  </script>
-  
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("oct 13, 2020 00:00:00").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("contest-countdown").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("contest-countdown").innerHTML = "EXPIRED";
+        document.querySelector('vote').disabled = false
+      }
+    }, 1000);
+    </script>
     
   </body>
 </html>

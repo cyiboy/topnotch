@@ -17,12 +17,12 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="icon" href="assets/img/fav.png">
+    <link rel="icon" href="..//assets/img/fav.png">
     <link
     rel="stylesheet"
     href="https://unpkg.com/izitoast/dist/css/iziToast.min.css"
   />
-    <link rel="stylesheet" href="assets/styles/contest-register.css" />
+    <link rel="stylesheet" href="..//assets/styles/contest-register.css" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -95,7 +95,7 @@
         <div class="col-6 p-0 d-none d-md-inline-block">
           <div class="position-absolute" style="right: 0px;">
             <img
-              src="assets/img/contest-landing-rectangle.png"
+              src="..//assets/img/contest-landing-rectangle.png"
               class="img-fluid"
               alt=""
             />
@@ -254,8 +254,8 @@
                 </div>
               </div>
                 <div class="form-btn">
-                  <script src="https://checkout.flutterwave.com/v3.js"></script>
-                <button type="button" id="summit" class="btn general-btn"   onclick="makePayment()">pay</button>
+                  <script src="https://js.paystack.co/v1/inline.js"></script>
+                <button type="button" id="summit" class="btn general-btn"   onclick="uploadimage()">summit</button>
               </div>
             
              
@@ -288,13 +288,13 @@
     <div class="container footer">
       <div class="row justify-content-center">
         <div class="col-3 text-center">
-          <img src="assets/img/instagram.png" class="img-fluid" alt="" />
+          <img src="..//assets/img/instagram.png" class="img-fluid" alt="" />
         </div>
         <div class="col-3 text-center">
-          <img src="assets/img/twitter.png" class="img-fluid" alt="" />
+          <img src="..//assets/img/twitter.png" class="img-fluid" alt="" />
         </div>
         <div class="col-3 text-center">
-          <img src="assets/img/facebook.png" class="img-fluid" alt="" />
+          <img src="..//assets/img/facebook.png" class="img-fluid" alt="" />
         </div>
       </div>
       <div class="copywrite">
@@ -409,7 +409,7 @@
     number: number,
     insta: insta,
   image: URL,
-  payment : "online",
+  payment: "offline",
    vote: 0
     
  
@@ -439,30 +439,30 @@ $(".custom-file-input").on("change", function () {
     </script>
        <script>
   
-            function makePayment() {
-    FlutterwaveCheckout({
-      public_key: "FLWPUBK-3b060ce5a8b484e75d7e1e45dea29ee6-X",
-      tx_ref: Math.floor(Math.random() * 100001),
-      amount: 1500,
-      currency: "NGN",
-      payment_optvote: votenions: "card,mobilemoney,ussd",
-      customer: {
-        email:  email,
-        phonenumber: number,
-        name: name,
-      },
-      callback: function (data) { // specified callback function
-        console.log(data);
-        uploadimage();
-      },
-      customizations: {
-        title: "topnotch entertainment",
-        description: "Payment for registration fee",
-        logo: "assets/img/sponsor-2.png",
-      },
-    });
-  }
-               
+          function payWithPaystack() {
+                    
+           
+         
+          
+        
+                   var handler = PaystackPop.setup({
+                       key: 'pk_live_03ae8a1a3828565b4b04ccc87c06ee6c8669471a',
+                       email: email,
+                       amount: 150000,
+                       currency: "NGN",
+                       
+                       callback: function (response) {
+                        //  Upload(response.transaction)
+                          console.log(response)
+                          uploadimage();
+        
+                       },
+                       onClose: function () {
+                           alert('window closed');
+                       }
+                   });
+                   handler.openIframe();
+               }
 
 
                function goBack() {
