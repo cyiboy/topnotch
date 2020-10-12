@@ -140,7 +140,7 @@ Business and Investment Master Class. 
                 >
               </div>
               <div class="col-md-6 text-center">
-                <a id="contestant" href="mr-and-miss-culture-2020/contest-register.html"
+                <a id="Register" href="mr-and-miss-culture-2020/contest-register.html"
                   ><button  class="btn general-btn general-btn-white" >
                     Register
                   </button></a
@@ -239,8 +239,8 @@ Business and Investment Master Class. 
           // If the count down is over, write some text 
           if (distance < 0) {
             clearInterval(x);
-            document.getElementById("contest-countdown").innerHTML = "EXPIRED";
-            
+            document.getElementById("contest-countdown").innerHTML = "Voting is on!!!";
+            document.getElementById('Register').setAttribute('class','disabled')
           }
         }, 1000);
         </script>

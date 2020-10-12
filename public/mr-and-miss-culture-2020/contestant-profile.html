@@ -168,7 +168,7 @@
               data-toggle="modal"
               data-target="#exampleModal"
               class="btn vote-btn"
-          disabled
+       
               >
               <span class="btn-icon"><i class="fa fa-star-o"></i></span>
               <span>vote</span>
@@ -523,7 +523,7 @@ return vote.update({
       // If the count down is over, write some text 
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById("contest-countdown").innerHTML = "EXPIRED";
+        document.getElementById("contest-countdown").innerHTML = "Voting is on!!!";
         document.querySelector('vote').disabled = false
       }
     }, 1000);
