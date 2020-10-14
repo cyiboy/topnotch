@@ -334,7 +334,13 @@
     <script src="https://unpkg.com/izitoast/dist/js/iziToast.min.js"></script>
     <script src="../js/app.js"></script> 
     <script>
-      var voten 
+      var data 
+      var email
+      var voten, point
+      var voted 
+      var pointnum 
+   var pointprice
+      var ref = Math.floor(Math.random() * 1001)
       var state = document.getElementById("state")
       var country = document.getElementById("country")
       var fname = document.getElementById("fname") 
@@ -343,13 +349,13 @@
       var info = document.getElementById("info")
       var position = document.getElementById("position")
       var image = document.getElementById("image")
-     document.getElementById("urls").innerHTML = "https://everythingtopnotch.com/contestant-profile.html?userid=" + id
-      document.getElementById("facebook").href =  "https://www.facebook.com/sharer/sharer.php?u=https://everythingtopnotch.com/contestant-profile.html?userid=" + id
-      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on Miss Africa Queen 2020 https://everythingtopnotch.com/contestant-profile.html?userid="+ id
+     document.getElementById("urls").innerHTML = "https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" + id
+      document.getElementById("facebook").href =  "https://www.facebook.com/sharer/sharer.php?u=https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" + id
+      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on Mr and Miss Culture 2020 https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid="+ id
       function myfunction() {
   /* Get the text field */
   console.log('i was gere')
-  var copyText =  "https://everythingtopnotch.com/contestant-profile.html?userid=" +  id
+  var copyText =  "https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" +  id
 
   navigator.clipboard.writeText(copyText).then(function() {
   console.log('Async: Copying to clipboard was successful!');
@@ -369,6 +375,7 @@
 
 docRef.get().then(function(doc) {
     if (doc.exists) {
+      data= doc.data()
         console.log("Document data:", doc.data());
         state.innerHTML = doc.data().state
         country.innerHTML = doc.data().country
@@ -395,7 +402,7 @@ shareButton.addEventListener('click', event => {
   if (navigator.share) { 
    navigator.share({
       title: 'Share profile link',
-      url: "https://everythingtopnotch.com/contestant-profile.html?userid=" +  id
+      url: "https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" +  id
     }).then(() => {
       console.log('Thanks for sharing!');
     })
@@ -413,10 +420,9 @@ closeButton.addEventListener('click', event => {
  <script>
    
         function makePayment() {
-          var email = document.getElementById("email").value
+          email = document.getElementById("email").value
    var point = document.getElementById("point").value
-   var pointnum 
-   var pointprice
+ 
    if (point === '1 point = 100 naira'){
     pointnum = 1
     pointprice = 100
@@ -458,11 +464,13 @@ closeButton.addEventListener('click', event => {
     pointprice = 70000
    }
    
+ 
 
-  voten = voten + pointnum     
+ var  ff = voten + pointnum   
+ voted = parseInt(ff, 10);  
     FlutterwaveCheckout({
       public_key: "FLWPUBK-3b060ce5a8b484e75d7e1e45dea29ee6-X",
-      tx_ref: Math.floor(Math.random() * 100001),
+      tx_ref:  ref,
       amount: pointprice,
       currency: "NGN",
       payment_options: "card,mobilemoney,ussd",
@@ -476,10 +484,10 @@ closeButton.addEventListener('click', event => {
 
 // Set the "capital" field of the city 'DC'
 return vote.update({
-    vote: voten
+    vote: voted
 })
 .then(function() {
-  location.reload();
+upload()
 })
 .catch(function(error) {
     // The document probably doesn't exist.
@@ -493,6 +501,31 @@ return vote.update({
       },
     });
   }
+
+  
+  function upload(){
+
+              
+db.collection("voting").add({
+email: data.email,
+voter: email,
+fullname: data.fullname,
+id: id,
+formal: data.vote,
+amount: pointprice,
+new: data.vote+pointnum,
+ref: ref
+
+})
+.then(function(docRef) {
+  location.reload();
+
+})
+.catch(function(error) {
+console.log(error.message)
+});
+
+}
                
 
 
@@ -527,6 +560,8 @@ return vote.update({
         document.querySelector('vote').disabled = false
       }
     }, 1000);
+
+
     </script>
     
   </body>

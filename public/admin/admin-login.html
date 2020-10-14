@@ -69,7 +69,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>  
 <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>  
 
-    <script src="js/app.js"></script> 
+    <script src="../js/app.js"></script> 
  <script>
    var user = firebase.auth().currentUser;
    console.log(user)
@@ -79,9 +79,9 @@
    password= document.getElementById('password').value
   firebase.auth().signInWithEmailAndPassword(email, password).
   then(
-   // console.log( )
+  // console.log(firebase.auth().currentUser.uid),
    
-   next(firebase.auth().currentUser.uid)
+  next(firebase.auth().currentUser.uid)
   )
   .catch(function(error) {
           // Handle Errors here.
