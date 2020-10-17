@@ -340,6 +340,7 @@
       var voted 
       var pointnum 
    var pointprice
+   var statusId
       var ref = Math.floor(Math.random() * 1001)
       var state = document.getElementById("state")
       var country = document.getElementById("country")
@@ -422,7 +423,7 @@ closeButton.addEventListener('click', event => {
         function makePayment() {
           email = document.getElementById("email").value
    var point = document.getElementById("point").value
- 
+   console.log(email)
    if (point === '1 point = 100 naira'){
     pointnum = 1
     pointprice = 100
@@ -468,7 +469,29 @@ closeButton.addEventListener('click', event => {
 
  var  ff = voten + pointnum   
  voted = parseInt(ff, 10);  
-    FlutterwaveCheckout({
+  upload()
+  }
+
+  
+  function upload(){
+
+              
+db.collection("voting").add({
+email: data.email,
+voter: email,
+fullname: data.fullname,
+id: id,
+status: 'pending',
+formal: data.vote,
+amount: pointprice,
+new: data.vote+pointnum,
+ref: ref
+
+})
+.then(function(docRef) {
+ statusId= docRef.id
+ console.log(statusId)
+  FlutterwaveCheckout({
       public_key: "FLWPUBK-3b060ce5a8b484e75d7e1e45dea29ee6-X",
       tx_ref:  ref,
       amount: pointprice,
@@ -487,7 +510,7 @@ return vote.update({
     vote: voted
 })
 .then(function() {
-upload()
+successful();
 })
 .catch(function(error) {
     // The document probably doesn't exist.
@@ -500,33 +523,28 @@ upload()
         logo: "..//assets/img/sponsor-2.png",
       },
     });
-  }
-
-  
-  function upload(){
-
-              
-db.collection("voting").add({
-email: data.email,
-voter: email,
-fullname: data.fullname,
-id: id,
-formal: data.vote,
-amount: pointprice,
-new: data.vote+pointnum,
-ref: ref
-
-})
-.then(function(docRef) {
-  location.reload();
-
 })
 .catch(function(error) {
 console.log(error.message)
 });
 
 }
-               
+
+    function successful (){
+      var vote = db.collection("voting").doc(statusId);
+
+// Set the "capital" field of the city 'DC'
+return vote.update({
+    status: 'successful'
+})
+.then(function() {
+  location.reload();
+})
+.catch(function(error) {
+    // The document probably doesn't exist.
+    console.error("Error updating document: ", error);
+});
+    }           
 
 
  </script>
