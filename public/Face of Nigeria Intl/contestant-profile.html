@@ -106,7 +106,7 @@
 
     <!-- CONTESTANT -->
     <div class="container contestant-profile">
-      <h3 class="contest-title">MR AND MISS CULTURE 2020</h3>
+      <h3 class="contest-title">Face of Nigeria Intl</h3>
       <div class="row justify-content-between">
         <div class="col-md-5">
           <div>
@@ -353,7 +353,7 @@
       var image = document.getElementById("image")
      document.getElementById("urls").innerHTML = "https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" + id
       document.getElementById("facebook").href =  "https://www.facebook.com/sharer/sharer.php?u=https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" + id
-      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on Mr and Miss Culture 2020 https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid="+ id
+      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on Face Of Nigeria Init https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid="+ id
       function myfunction() {
   /* Get the text field */
   console.log('i was gere')
@@ -373,7 +373,7 @@
   
   
   
-    var docRef = db.collection("mrandmissculture").doc(id);
+    var docRef = db.collection("FaceOfNigeria").doc(id);
 
 docRef.get().then(function(doc) {
     if (doc.exists) {
@@ -530,7 +530,7 @@ function payWithPaystack() {
     },
     callback: function(response){
       let message = 'Payment complete! Reference: ' + response.reference;
-      var vote = db.collection("mrandmissculture").doc(id);
+      var vote = db.collection("FaceOfNigeria").doc(id);
 
  return vote.update({
     vote: voted
@@ -552,7 +552,7 @@ successful();
  </script>
   <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("oct 13, 2020 00:00:00").getTime();
+    var countDownDate = new Date("Nov 30, 2020 00:00:00").getTime();
     
     // Update the count down every 1 second
     var x = setInterval(function() {

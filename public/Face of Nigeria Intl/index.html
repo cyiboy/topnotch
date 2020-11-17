@@ -13,9 +13,9 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="icon" href="assets/img/fav.png">
-    <link rel="stylesheet" href="assets/styles/contest.css" />
-    <title>everthingNotch | Contest</title>
+    <link rel="icon" href="..//..//assets/img/fav.png">
+    <link rel="stylesheet" href="..//..//assets/styles/contest-landing.css" />
+    <title>Miss Queen AFRICA</title>
   </head>
   <body>
     <!-- HEADER -->
@@ -60,10 +60,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="./index.html">home</a>
+                  <a class="nav-link" href="../index.html">home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./contest.html">contest</a>
+                  <a class="nav-link" href="../contest.html">contest</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">suprice</a>
@@ -74,19 +74,14 @@
               </ul>
             </div>
           </nav>
-          <div class="intro-text">
-            <p>
-              Your time is <span class="intro-text-color">limited</span>, Don’t
-              let the <span class="intro-text-color">noise</span> of other
-              opinions drown your own
-              <span class="intro-text-color">inner voice</span>.
-            </p>
-          </div>
         </div>
-
         <div class="col-6 p-0 d-none d-md-inline-block">
-          <div class="">
-            <img src="assets/img/contest-bg.png" class="img-fluid" alt="" />
+          <div class="position-absolute" style="right: 0px;">
+            <img
+              src="..//..//assets/img/contest-landing-rectangle.png"
+              class="img-fluid"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -94,19 +89,16 @@
 
     <!-- CONTEST -->
     <div class="container contest">
-      <div class="section-headings">
-        <p>upcoming contest</p>
-      </div>
       <div class="row explore-sec justify-content-between">
-        <div class="col-md-6 col-lg-5">
+        <div class="col-md-6">
           <img
-            src="assets/img/culture nigeria.png"
-            class="h-lg-100 img-fluid"
+            src="..//..//assets/img/culture nigeria.png"
+            class="img-fluid"
             alt=""
           />
         </div>
 
-        <div class="col-md-6 col-lg-5">
+        <div class="col-md-6">
           <div class="show-info-wrapper">
             <h3 class="show-title">Face of Nigeria Intl</h3>
             <div class="show-info">
@@ -132,18 +124,20 @@
               </p>
             </div>
             <div class="show-time">
-              <p id="contest-countdown"></p>
+              <p id="contest-countdown" >01:02:30:05</p>
             </div>
             <div class="row">
               <div class="col-md-6 text-center">
-                <a href="Face of Nigeria Intl/"
-                  ><button class="btn general-btn">learn more</button></a
+                <a id="Register" href="contest-register.html"
+                  ><button class="btn general-btn general-btn-white" >
+                    Register
+                  </button></a
                 >
               </div>
               <div class="col-md-6 text-center">
-                <a id="Register" href="Face of Nigeria Intl/contest-register.html"
-                  ><button  class="btn general-btn general-btn-white" >
-                    Register
+                <a id="contestant" href="contestance.html"
+                  ><button class="btn general-btn general-btn" >
+                    contestant
                   </button></a
                 >
               </div>
@@ -153,45 +147,17 @@
       </div>
     </div>
 
-    <!-- PAST CONTEST -->
-    <div class="container past-contest">
-      <div class="section-headings">
-        <p>past contest</p>
-      </div>
-      <div class="row justify-content-center">
-        <a  href="Miss queen africa.html"></a>
-        <div class="col-md-3 mt-3 past-contest-img">
-         
-          <img src="assets/img/miss agrica queen.png" class="img-fluid" alt="" />
-        </a>
-        </div>
-     
-        <div class="col-md-3 mt-3 past-contest-img">
-          <img src="assets/img/past-contest.png" class="img-fluid" alt="" />
-        </div>
-        <div class="col-md-3 mt-3 past-contest-img">
-          <img src="assets/img/past-contest-2.png" class="img-fluid" alt="" />
-        </div>
-      </div>
-    </div>
-
     <!-- FOOTER -->
     <div class="container footer">
       <div class="row justify-content-center">
         <div class="col-3 text-center">
-          <a href="#">
-          <img src="assets/img/instagram.png" class="img-fluid" alt="" />
-        </a>
-        </div>
-        <a href="#">
-        <div class="col-3 text-center">
-          <img src="assets/img/twitter.png" class="img-fluid" alt="" />
-        </a>
+          <img src="..//..//assets/img/instagram.png" class="img-fluid" alt="" />
         </div>
         <div class="col-3 text-center">
-            <a href="#">
-          <img src="assets/img/facebook.png" class="img-fluid" alt="" />
-        </a>
+          <img src="..//..//assets/img/twitter.png" class="img-fluid" alt="" />
+        </div>
+        <div class="col-3 text-center">
+          <img src="..//..//assets/img/facebook.png" class="img-fluid" alt="" />
         </div>
       </div>
       <div class="copywrite">
@@ -217,7 +183,7 @@
     <script>
         // Set the date we're counting down to
         var countDownDate = new Date("Nov 30, 2020 00:00:00").getTime();
-        
+      
         // Update the count down every 1 second
         var x = setInterval(function() {
         
