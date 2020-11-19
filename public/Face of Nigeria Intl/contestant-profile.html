@@ -577,7 +577,9 @@ successful();
       if (distance < 0) {
         clearInterval(x);
         document.getElementById("contest-countdown").innerHTML = "Voting is on!!!";
-        document.querySelector('vote').disabled = false
+       
+      }else{
+        document.getElementById('vote').setAttribute('class','disabled')
       }
     }, 1000);
 

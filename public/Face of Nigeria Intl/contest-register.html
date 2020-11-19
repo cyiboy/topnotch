@@ -254,7 +254,7 @@
                 </div>
               </div>
                 <div class="form-btn">
-                  <script src="https://checkout.flutterwave.com/v3.js"></script>
+            
                 <button type="button" id="summit" class="btn general-btn"   onclick="makePayment()">pay</button>
               </div>
             
@@ -279,7 +279,7 @@
           <p class="text-center">Your registration was successfull. contact us on whatapp <a href="https://wa.link/6kebl6"> +234 705 0692 606</a> for more information about the contest.</p>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-success btn-block" data-dismiss="modal" onclick=goBack()>OK</button>
+          <button class="btn btn-success btn-block" data-dismiss="modal" onclick=goBack()>Redirect Me</button>
         </div>
       </div>
     </div>
@@ -317,6 +317,7 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
@@ -327,6 +328,7 @@
     <script>
        var loader = document.getElementById("loader")
         loader.style.display = "none";
+        var ref =Math.floor((Math.random() * 1000000000) + 1)
        let personalInfo = document.querySelector("#personal-info");
       let generalInfo = document.querySelector("#general-info");
       let btn2 = document.querySelector("#summit");
@@ -373,8 +375,8 @@
    
       })
 
-      function uploadimage(randomnumber){
-      var random = randomnumber
+      function uploadimage(){
+      
       // Created a Storage Reference with root dir
       var storageRef = firebase.storage().ref();
       // Get the file from DOM
@@ -389,12 +391,12 @@
         thisRef.getDownloadURL().then(function(downloadURL) {
           URL =  downloadURL
                 console.log('File available at', URL )
-                upload(random)
+                upload()
             });
  
       });
     }
-    function upload(random){
+    function upload( ){
 
               
      db.collection("FaceOfNigeria").add({
@@ -408,7 +410,7 @@
     expression: expression,
     number: number,
     insta: insta,
-    paymentRef: random,
+    paymentRef: ref,
   image: URL,
   payment : "online",
    vote: 0
@@ -441,39 +443,27 @@ $(".custom-file-input").on("change", function () {
        <script>
   
             function makePayment() {
-             var randomnumber = Math.floor(Math.random() * 100001)
-    FlutterwaveCheckout({
-    
-      public_key: "FLWPUBK-3b060ce5a8b484e75d7e1e45dea29ee6-X",
-      tx_ref: randomnumber,
-      amount: 10,
-      currency: "NGN",
-      payment_optvote: "card,mobilemoney,ussd",
-
-      customer: {
-        email:  email,
-        phonenumber: number,
-        name: name,
-      },
-      callback: function (data) { // specified callback function
-        console.log(data)  ;
-        uploadimage(randomnumber);
-      },
-      onclose: function() {
-        // close modal
-      },
-      customizations: {
-        title: "topnotch entertainment",
-        description: "Payment for registration fee",
-        logo: "../assets/img/sponsor-2.png",
-      },
-    });
+           
+             let handler = PaystackPop.setup({
+    key: 'pk_live_03ae8a1a3828565b4b04ccc87c06ee6c8669471a', // Replace with your public key
+    email: email,
+    amount: 1500* 100,
+    ref: ref, // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+    // label: "Optional string that replaces customer email"
+    onClose: function(){
+      alert('Window closed.');
+    },
+    callback: function(response){
+     uploadimage()
+    }
+  });
+  handler.openIframe();
   }
                
 
 
                function goBack() {
-                location.replace("index.html");
+                location.replace('https://wa.link/6kebl6');
 }
         </script>
   </body>
