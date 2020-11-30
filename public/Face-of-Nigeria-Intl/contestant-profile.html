@@ -351,13 +351,13 @@
       var info = document.getElementById("info")
       var position = document.getElementById("position")
       var image = document.getElementById("image")
-     document.getElementById("urls").innerHTML = "https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" + id
-      document.getElementById("facebook").href =  "https://www.facebook.com/sharer/sharer.php?u=https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" + id
-      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on Face Of Nigeria Init https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid="+ id
+     document.getElementById("urls").innerHTML = "https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid=" + id
+      document.getElementById("facebook").href =  "https://www.facebook.com/sharer/sharer.php?u=https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid=" + id
+      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on Face Of Nigeria Intl https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid="+ id
       function myfunction() {
   /* Get the text field */
   console.log('i was gere')
-  var copyText =  "https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" +  id
+  var copyText =  "https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid=" +  id
 
   navigator.clipboard.writeText(copyText).then(function() {
   console.log('Async: Copying to clipboard was successful!');
@@ -404,7 +404,7 @@ shareButton.addEventListener('click', event => {
   if (navigator.share) { 
    navigator.share({
       title: 'Share profile link',
-      url: "https://everythingtopnotch.com/mr-and-miss-culture-2020/contestant-profile.html?userid=" +  id
+      url: "https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid=" +  id
     }).then(() => {
       console.log('Thanks for sharing!');
     })
