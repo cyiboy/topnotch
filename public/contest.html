@@ -1,278 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="icon" href="assets/img/fav.png">
-    <link rel="stylesheet" href="assets/styles/contest.css" />
-    <title>everthingNotch | Contest</title>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <div class="container-fluid pl-0">
-      <div class="row">
-        <div class="col-md-6 pr-0">
-          <nav class="navbar navbar-expand-md">
-            <button
-              class="navbar-toggler ml-auto"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <svg
-                width="106"
-                height="110"
-                viewBox="0 0 106 110"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  y="22.1069"
-                  width="128.684"
-                  height="128.684"
-                  transform="rotate(-46.9955 0 22.1069)"
-                  fill="#E12B2B"
-                  fill-opacity="0.25"
-                />
-                <path
-                  d="M72.1954 17.2014C68.9897 17.8958 64.0227 20.8472 64.0227 22.0972C64.0227 22.4792 64.9386 22.5833 68.8841 22.5833C72.125 22.5833 73.8863 22.7222 74.1682 23C74.4852 23.3125 74.8022 23.3125 75.4716 23C76.3875 22.5833 87.9772 22.375 87.9772 22.7569C87.9772 23.4861 86.7443 25.0486 86.0397 25.2222C85.5818 25.3264 83.4682 25.4653 81.3897 25.4653L77.5852 25.5347L77.4795 28.5556L77.3738 31.6111H80.8966C84.0318 31.6111 84.4545 31.6806 84.8068 32.2708C85.2295 33.1042 84.9477 33.9375 84.067 34.3889C83.7147 34.5972 82.0943 34.7361 80.4386 34.7361H77.4091V38.0347V41.3333H81.8477H86.3216L87.4841 42.5486L88.6466 43.7639L89.492 42.6528C89.9852 42.0278 90.6897 40.7083 91.1125 39.7708C94.4591 31.8542 91.7113 23.3472 84.525 19.1111C80.65 16.8542 76.7045 16.2639 72.1954 17.2014Z"
-                  fill="white"
-                />
-                <path
-                  d="M60.5352 27.5139C58.3159 33.8333 59.9363 40.5694 64.7624 44.9444C69.2011 49.0069 75.542 50.4306 81.0374 48.5903C84.067 47.5833 87.2727 45.6042 87.2727 44.7361C87.2727 44.5972 84.3136 44.4583 80.7204 44.4583C70.9272 44.4583 71.2795 44.875 71.1386 33.7639L71.0329 25.7083H66.6647C64.2693 25.7083 62.0852 25.6042 61.8034 25.5C61.4159 25.3611 61.0988 25.8819 60.5352 27.5139Z"
-                  fill="white"
-                />
-              </svg>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="./index.html">home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./contest.html">contest</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">suprice</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">event planing </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div class="intro-text">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="icon" href="assets/img/fav.png">
+  <link rel="stylesheet" href="assets/styles/contest.css" />
+  <title>everthingNotch | Contest</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div class="container-fluid pl-0">
+    <div class="row">
+      <div class="col-md-6 pr-0">
+        <nav class="navbar navbar-expand-md">
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <svg width="106" height="110" viewBox="0 0 106 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="22.1069" width="128.684" height="128.684" transform="rotate(-46.9955 0 22.1069)" fill="#E12B2B"
+                fill-opacity="0.25" />
+              <path
+                d="M72.1954 17.2014C68.9897 17.8958 64.0227 20.8472 64.0227 22.0972C64.0227 22.4792 64.9386 22.5833 68.8841 22.5833C72.125 22.5833 73.8863 22.7222 74.1682 23C74.4852 23.3125 74.8022 23.3125 75.4716 23C76.3875 22.5833 87.9772 22.375 87.9772 22.7569C87.9772 23.4861 86.7443 25.0486 86.0397 25.2222C85.5818 25.3264 83.4682 25.4653 81.3897 25.4653L77.5852 25.5347L77.4795 28.5556L77.3738 31.6111H80.8966C84.0318 31.6111 84.4545 31.6806 84.8068 32.2708C85.2295 33.1042 84.9477 33.9375 84.067 34.3889C83.7147 34.5972 82.0943 34.7361 80.4386 34.7361H77.4091V38.0347V41.3333H81.8477H86.3216L87.4841 42.5486L88.6466 43.7639L89.492 42.6528C89.9852 42.0278 90.6897 40.7083 91.1125 39.7708C94.4591 31.8542 91.7113 23.3472 84.525 19.1111C80.65 16.8542 76.7045 16.2639 72.1954 17.2014Z"
+                fill="white" />
+              <path
+                d="M60.5352 27.5139C58.3159 33.8333 59.9363 40.5694 64.7624 44.9444C69.2011 49.0069 75.542 50.4306 81.0374 48.5903C84.067 47.5833 87.2727 45.6042 87.2727 44.7361C87.2727 44.5972 84.3136 44.4583 80.7204 44.4583C70.9272 44.4583 71.2795 44.875 71.1386 33.7639L71.0329 25.7083H66.6647C64.2693 25.7083 62.0852 25.6042 61.8034 25.5C61.4159 25.3611 61.0988 25.8819 60.5352 27.5139Z"
+                fill="white" />
+            </svg>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contest.html">contest</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">suprice</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">event planing </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="intro-text">
+          <p>
+            Your time is <span class="intro-text-color">limited</span>, Don’t
+            let the <span class="intro-text-color">noise</span> of other
+            opinions drown your own
+            <span class="intro-text-color">inner voice</span>.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-6 p-0 d-none d-md-inline-block">
+        <div class="">
+          <img src="assets/img/contest-bg.png" class="img-fluid" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEST -->
+  <div class="container contest">
+    <div class="section-headings">
+      <p>upcoming contest</p>
+    </div>
+    <div class="row explore-sec justify-content-between">
+      <div class="col-md-6 col-lg-5">
+        <img src="assets/img/TMA2021.png" class="h-lg-100 img-fluid" alt="" />
+      </div>
+
+      <div class="col-md-6 col-lg-5">
+        <div class="show-info-wrapper">
+          <h3 class="show-title">TOP MODEL AFRICA 2021</h3>
+          <div class="show-info">
+            <p> 31th of MARCH.</p>
+
             <p>
-              Your time is <span class="intro-text-color">limited</span>, Don’t
-              let the <span class="intro-text-color">noise</span> of other
-              opinions drown your own
-              <span class="intro-text-color">inner voice</span>.
+              You are young, beautiful, vibrant, confident and elegant, don't let anyone convince you otherwise. </p>
+            <p>
+              Take the chance to be a Queen of Faceoftopnotchentertainment.  Become a model, achieve your dreams and
+              aspiration in modelling. Don't just be a fashionista, make a career with your skill!!!
+            </p>
+            <p>
+              TOP MODEL AFRICA 2021 Is an online contest with NO STAGE, NO LIVE CAMPING NO TICKET SALES 
+              Age 16-35 ------------------
+              It is for any body size and also for any height. 
+            </p>
+            <p>•
+              TMA2021 definition of beauty is not based on only your physical attributes, as long as you are
+              intelligent, smart and bold, you too can become a Queen. 
+            </p>
+            <p>
+              You can stand the chance to gain one as TMA2021 We use this opportunity to give empowerment to the youth,
+              bring out the beauty in them and also know their worth, Lecture them on Dress Ethics, Modelling as a
+              career, Business and Investment Master Class. 
+
+            </p>
+            <p>
+              9.5M prizes/opportunities are given to Winners. 
+            </p>
+            <p>
+
+              💥 Winner; 1million naira cash prize, IPhone12pro, A Private University Scholarship Ticket (T&C APPLIED),
+              Paid Tourism trip, 100k Shopping Voucher, Modeling Agency Signing, Annual Managing Contract, Ambassadorial
+              Deal, Dinner with invited celebrities. 
+            </p>
+            <p>
+
+              💥 1st Runner Up; 100k cash prize,  Paid Tourism trip, 50k Shopping Voucher, Modeling Agency Signing,
+              Annual Managing Contract, Ambassadorial Deal, Dinner with invited celebrities.</p>
+            <p>
+              💥 2nd Runner Up; 50k cash prize, Paid Tourism trip, Shopping Voucher, Modeling Agency Signing, Annual
+              Managing Contract, Ambassadorial Deal, Dinner with invited celebrities.
+            </p>
+            <p>
+              This is wholly Sponsored by TOPNOTCH SURPRISE. 
+
+              THIS IS AN OPPORTUNITY YOU WILL NEVER WANT TO MISS.
+            </p>
+            <p>
+
+              Top MODEL AFRICA 2021 REGISTRATION IS ON NOW AND CLOSES 10TH OF APRIL. 
+            </p>
+            </p>
+            Instead of 10,000 Registration fee you’re opportuned to pay 8,000 from now till the 31th of MARCH. 
+             </p>
+            </p>
+            To Register, send a DM or message us on WhatsApp on- 0705 069 2606. 
             </p>
           </div>
-        </div>
-
-        <div class="col-6 p-0 d-none d-md-inline-block">
-          <div class="">
-            <img src="assets/img/contest-bg.png" class="img-fluid" alt="" />
+          <div class="show-time">
+            <p id="contest-countdown"></p>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTEST -->
-    <div class="container contest">
-      <div class="section-headings">
-        <p>upcoming contest</p>
-      </div>
-      <div class="row explore-sec justify-content-between">
-        <div class="col-md-6 col-lg-5">
-          <img
-          src="/assets/img/TMA2021.jpg"
-            class="h-lg-100 img-fluid"
-            alt=""
-          />
-        </div>
-
-        <div class="col-md-6 col-lg-5">
-          <div class="show-info-wrapper">
-            <h3 class="show-title">TOP MODEL AFRICA 2021</h3>
-            <div class="show-info">
-              <p> 31th of MARCH.</p>
-               
-             <p>
-              You are young, beautiful, vibrant, confident and elegant, don't let anyone convince you otherwise.  </p>  <p>
-                Take the chance to be a Queen of Faceoftopnotchentertainment.  Become a model, achieve your dreams and aspiration in modelling. Don't just be a fashionista, make a career with your skill!!!
-</p>  <p>
-  TOP MODEL AFRICA 2021 Is an online contest with NO STAGE, NO LIVE CAMPING NO TICKET SALES 
-  Age 16-35 ------------------
-  It is for any body size and also for any height. 
-</p>  <p>•
-  TMA2021 definition of beauty is not based on only your physical attributes, as long as you are intelligent, smart and bold, you too can become a Queen. 
-</p>  <p>
-  You can stand the chance to gain one as TMA2021 We use this opportunity to give empowerment to the youth, bring out the beauty in them and also know their worth, Lecture them on Dress Ethics, Modelling as a career, Business and Investment Master Class. 
-
-</p>  <p>
-  9.5M prizes/opportunities are given to Winners. 
-</p>  <p>
- 
-💥 Winner; 1million naira cash prize, IPhone12pro, A Private University Scholarship Ticket (T&C APPLIED), Paid Tourism trip, 100k Shopping Voucher, Modeling Agency Signing, Annual Managing Contract, Ambassadorial Deal, Dinner with invited celebrities. 
-</p>  <p>
-
-  💥 1st Runner Up; 100k cash prize,  Paid Tourism trip, 50k Shopping Voucher, Modeling Agency Signing, Annual Managing Contract, Ambassadorial Deal, Dinner with invited celebrities.</p>  <p>
-    💥 2nd Runner Up; 50k cash prize, Paid Tourism trip, Shopping Voucher, Modeling Agency Signing, Annual Managing Contract, Ambassadorial Deal, Dinner with invited celebrities.
-  </p>  <p>
-    This is wholly Sponsored by TOPNOTCH SURPRISE. 
-
-THIS IS AN OPPORTUNITY YOU WILL NEVER WANT TO MISS.
-</p>  <p>
-
-Top MODEL AFRICA 2021 REGISTRATION IS ON NOW AND CLOSES 10TH OF APRIL. 
-</p>  </p>
-Instead of 10,000 Registration fee you’re opportuned to pay 8,000 from now till the 31th of MARCH. 
- </p>  </p>
-To Register, send a DM or message us on WhatsApp on- 0705 069 2606.  
-</p>           
-</div>
-            <div class="show-time">
-              <p id="contest-countdown"></p>
-            </div>
-            <div class="row">
-              <div class="col-md-6 text-center">
-                <a id="Register" href="/TMA2021/contest-register.html"
-                  ><button class="btn general-btn general-btn-white" >
-                    Register
-                  </button></a
-                >
-              </div>
-              <div class="col-md-6 text-center">
-                <a id="contestant" href="/TMA2021"
-                  ><button class="btn general-btn general-btn" >
-                    Learn More
-                  </button></a
-                >
-              </div>
+          <div class="row">
+            <!-- <div class="col-md-6 text-center">
+              <a id="Register" href="/TMA2021/contest-register.html"><button class="btn general-btn general-btn-white">
+                  Register
+                </button></a>
+            </div> -->
+            <div class="col-md-6 text-center">
+              <a id="contestant" href="/TMA2021"><button class="btn general-btn general-btn">
+                  Learn More
+                </button></a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- PAST CONTEST -->
-    <div class="container past-contest">
-      <div class="section-headings">
-        <p>past contest</p>
+  <!-- CONTEST -->
+  <div class="container contest">
+    <div class="section-headings">
+      <p>Ongoing contest</p>
+    </div>
+    <div class="row explore-sec justify-content-between">
+      <div class="col-md-6">
+        <img src="/assets/img/most-beautiful.png" class="img-fluid" alt="" />
       </div>
-      <div class="row justify-content-center">
-        <a  href="index.html"></a>
-        <div class="col-md-3 mt-3 past-contest-img">
-         
-          <img src="assets/img/miss agrica queen.png" class="img-fluid" alt="" />
+
+      <div class="col-md-6">
+        <div class="show-info-wrapper">
+          <h3 class="show-title">MOST-BEAUTIFUL-CAMPUS-QUEEN</h3>
+          <div class="show-info">
+            <p>JAN 30 2021</p>
+
+            <p>
+              ✅ REGISTRATION FOR MOST BEAUTIFUL CAMPUS QUEEN IS OFFICIALLY ON NOW AND CLOSES ON THE 31st OF JANUARY 2021
+            </p>
+            <p>
+              •MOST BEAUTIFUL CAMPUS QUEEN IS AN ONLINE CONTEST.
+              NO STAGE, NO LIVE CAMPING NO TICKET SALES 💥
+              Age 16-30—————————————————
+              It is for any body size and also for any height. 
+            </p>
+            <p>
+              •
+
+              MBCQ definition of beauty is not based on only your physical attributes, as long as you are intelligent,
+              smart, and bold, you too can become a Queen. 
+
+            </p>
+            <p>•
+
+              You can stand the chance to gain one as MBCQ We use this opportunity to give empowerment to the youth,
+              bring out the beauty in them and also know their worth,
+              Lecture them on Dress Ethics,
+              Modelling as a career,
+              Business and Investment Master Class. 
+            </p>
+            <p>
+              2M prizes/opportunities are given to Winners
+            </p>
+            <p>
+              💥Winner; Paid Tourism trip, cash prize, smart phone, Shopping Voucher, Full Provisions, Gown, Skin Care
+              Products, Modeling Agency Signing, Annual Managing Contract, Ambassadorial Deal, Dinner & Chill, Interview
+              Section, Promotion, Online Magazine Recognition.
+            </p>
+            <p>
+              💥1st Runner Up; Paid Tourism trip, cash prize, Provisions, Modeling Agency Signing, Annual Managing
+              Contract, Ambassadorial Deal, Dinner & Chill, Interview Section, Promotion, Online Magazine Recognition.
+            </p>
+            <p>
+              💥2nd Runner Up; Paid Tourism trip, cash prize, Modeling Agency Signing, Annual Managing Contract,
+              Ambassadorial Deal, Dinner & Chill, Interview Section, Promotion, Online Magazine
+            </p>
+          </div>
+          <div class="show-time">
+            <p id="contest-countdown"></p>
+          </div>
+          <div class="row">
+          
+            <div class="col-md-6 text-center">
+              <a id="contestant" href="/MOST-BEAUTIFUL-CAMPUS-QUEEN/contestance.html"><button class="btn general-btn general-btn">
+                  contestant
+                </button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PAST CONTEST -->
+  <div class="container past-contest">
+    <div class="section-headings">
+      <p>past contest</p>
+    </div>
+    <div class="row justify-content-center">
+      <a href="index.html"></a>
+      <div class="col-md-3 mt-3 past-contest-img">
+
+        <img src="assets/img/miss agrica queen.png" class="img-fluid" alt="" />
         </a>
-        </div>
-     
-        <div class="col-md-3 mt-3 past-contest-img">
-          <img src="assets/img/face of nigeria.png" class="img-fluid" alt="" />
-        </div>
-        <div class="col-md-3 mt-3 past-contest-img">
-          <img src="assets/img/culture nigeria.png" class="img-fluid" alt="" />
-        </div>
-        <div class="col-md-3 mt-3 past-contest-img">
-          <img src="assets/img/past-contest-2.png" class="img-fluid" alt="" />
-        </div>
-        <div class="col-md-3 mt-3 past-contest-img">
-          <img src="assets/img/contest-landing-img.png" class="img-fluid" alt="" />
-        </div>
-        <div class="col-md-3 mt-3 past-contest-img">
-          <img src="assets/img/past-contest.png" class="img-fluid" alt="" />
-        </div>
-         
-      
-        
       </div>
-    </div>
 
-    <!-- FOOTER -->
-    <div class="container footer">
-      <div class="row justify-content-center">
-        <div class="col-3 text-center">
-          <a href="#">
+      <div class="col-md-3 mt-3 past-contest-img">
+        <img src="assets/img/face of nigeria.png" class="img-fluid" alt="" />
+      </div>
+      <div class="col-md-3 mt-3 past-contest-img">
+        <img src="assets/img/culture nigeria.png" class="img-fluid" alt="" />
+      </div>
+      <div class="col-md-3 mt-3 past-contest-img">
+        <img src="assets/img/past-contest-2.png" class="img-fluid" alt="" />
+      </div>
+      <div class="col-md-3 mt-3 past-contest-img">
+        <img src="assets/img/contest-landing-img.png" class="img-fluid" alt="" />
+      </div>
+      <div class="col-md-3 mt-3 past-contest-img">
+        <img src="assets/img/past-contest.png" class="img-fluid" alt="" />
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="container footer">
+    <div class="row justify-content-center">
+      <div class="col-3 text-center">
+        <a href="#">
           <img src="assets/img/instagram.png" class="img-fluid" alt="" />
         </a>
-        </div>
-        <a href="#">
+      </div>
+      <a href="#">
         <div class="col-3 text-center">
           <img src="assets/img/twitter.png" class="img-fluid" alt="" />
-        </a>
-        </div>
-        <div class="col-3 text-center">
-            <a href="#">
-          <img src="assets/img/facebook.png" class="img-fluid" alt="" />
-        </a>
-        </div>
-      </div>
-      <div class="copywrite">
-        <p>Copyright @topnotch enterteainment</p>
-      </div>
+      </a>
     </div>
+    <div class="col-3 text-center">
+      <a href="#">
+        <img src="assets/img/facebook.png" class="img-fluid" alt="" />
+      </a>
+    </div>
+  </div>
+  <div class="copywrite">
+    <p>Copyright @topnotch enterteainment</p>
+  </div>
+  </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("March 31, 2021 00:00:00").getTime();
-        
-        // Update the count down every 1 second
-        var x = setInterval(function() {
-        
-          // Get today's date and time
-          var now = new Date().getTime();
-            
-          // Find the distance between now and the count down date
-          var distance = countDownDate - now;git 
-            
-          // Time calculations for days, hours, minutes and seconds
-          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-          // Output the result in an element with id="demo"
-          document.getElementById("contest-countdown").innerHTML = days + "d " + hours + "h "
-          + minutes + "m " + seconds + "s ";
-            
-          // If the count down is over, write some text 
-          if (distance < 0) {
-            clearInterval(x);
-          document.getElementById("contest-countdown").innerHTML = "Voting is on!!!";
-            document.getElementById('Register').setAttribute('class','disabled')
-          }
-        }, 1000);
-        </script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("March 31, 2021 00:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now; git
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in an element with id="demo"
+      document.getElementById("contest-countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("contest-countdown").innerHTML = "Voting is on!!!";
+        document.getElementById('Register').setAttribute('class', 'disabled')
+      }
+    }, 1000);
+  </script>
+</body>
+
 </html>
