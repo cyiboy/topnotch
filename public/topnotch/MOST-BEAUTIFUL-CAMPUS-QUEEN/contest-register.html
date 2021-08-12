@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="icon" href="../assets/img/fav.png">
+  <link rel="stylesheet" href="https://unpkg.com/izitoast/dist/css/iziToast.min.css" />
+  <link rel="stylesheet" href="../assets/styles/contest-register.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Contest Register </title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div id="loader" class="loading">Loading&#8230;</div>
+
+  <div class="container-fluid pl-0">
+    <div class="row">
+      <div class="col-md-6 pr-0">
+        <nav class="navbar navbar-expand-md">
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <svg width="106" height="110" viewBox="0 0 106 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect y="22.1069" width="128.684" height="128.684" transform="rotate(-46.9955 0 22.1069)" fill="#E12B2B"
+                fill-opacity="0.25" />
+              <path
+                d="M72.1954 17.2014C68.9897 17.8958 64.0227 20.8472 64.0227 22.0972C64.0227 22.4792 64.9386 22.5833 68.8841 22.5833C72.125 22.5833 73.8863 22.7222 74.1682 23C74.4852 23.3125 74.8022 23.3125 75.4716 23C76.3875 22.5833 87.9772 22.375 87.9772 22.7569C87.9772 23.4861 86.7443 25.0486 86.0397 25.2222C85.5818 25.3264 83.4682 25.4653 81.3897 25.4653L77.5852 25.5347L77.4795 28.5556L77.3738 31.6111H80.8966C84.0318 31.6111 84.4545 31.6806 84.8068 32.2708C85.2295 33.1042 84.9477 33.9375 84.067 34.3889C83.7147 34.5972 82.0943 34.7361 80.4386 34.7361H77.4091V38.0347V41.3333H81.8477H86.3216L87.4841 42.5486L88.6466 43.7639L89.492 42.6528C89.9852 42.0278 90.6897 40.7083 91.1125 39.7708C94.4591 31.8542 91.7113 23.3472 84.525 19.1111C80.65 16.8542 76.7045 16.2639 72.1954 17.2014Z"
+                fill="white" />
+              <path
+                d="M60.5352 27.5139C58.3159 33.8333 59.9363 40.5694 64.7624 44.9444C69.2011 49.0069 75.542 50.4306 81.0374 48.5903C84.067 47.5833 87.2727 45.6042 87.2727 44.7361C87.2727 44.5972 84.3136 44.4583 80.7204 44.4583C70.9272 44.4583 71.2795 44.875 71.1386 33.7639L71.0329 25.7083H66.6647C64.2693 25.7083 62.0852 25.6042 61.8034 25.5C61.4159 25.3611 61.0988 25.8819 60.5352 27.5139Z"
+                fill="white" />
+            </svg>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contest.html">contest</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">suprice</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">event planing </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="col-6 p-0 d-none d-md-inline-block">
+        <div class="position-absolute" style="right: 0px;">
+          <img src="../assets/img/contest-landing-rectangle.png" class="img-fluid" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="container contest-form">
+    <div class="row">
+      <div class="col-md-8">
+        <h3 class="contest-title animate__animated animate__infinite">
+          MOST-BEAUTIFUL-CAMPUS-QUEEN
+        </h3>
+
+        <form>
+          <!-- PERSONAL INFORMATION -->
+          <div id="personal-info">
+            <p class="form-title">personal information</p>
+            <div class="form-group">
+              <label>status</label>
+              <select id="status" class="form-control">
+                <option selected>select Status</option>
+                <option>Mr</option>
+                <option>Miss</option>
+
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="name">full name</label>
+              <input type="text" class="form-control form-input" id="name" placeholder="enter full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">email address</label>
+              <input type="email" class="form-control form-input" id="email" placeholder="email address" required />
+            </div>
+
+            <div class="form-group">
+              <label for="">date of birth</label>
+              <input type="date" class="form-control form-input" id="DOB" placeholder="date of birth" required />
+            </div>
+
+            <div class="form-group">
+              <label for="address">full address</label>
+              <input type="text" class="form-control form-input" id="address" required placeholder="address" />
+            </div>
+            <div class="form-group">
+              <label for="state/province">state/province</label>
+              <input type="text" class="form-control form-input" id="state" required placeholder="state" />
+            </div>
+            <div class="form-group">
+              <label for="country">country</label>
+              <input type="text" class="form-control form-input" id="country" required placeholder="country" />
+            </div>
+
+
+
+
+            <div class="form-btn">
+              <button id="continue-btn" class="btn general-btn">
+                continue
+              </button>
+            </div>
+          </div>
+
+          <!-- GENERAL INFORMATION -->
+          <div id="general-info" class="animate__animated animate__fadeInRight">
+            <p class="form-title">general information</p>
+            <div class="form-group">
+              <label for="number">phone number</label>
+              <input type="number" class="form-control form-input" id="number" placeholder="phone number" />
+            </div>
+
+            <div class="form-group">
+              <label for="expression">tell us about yourself</label>
+              <textarea class="form-control" id="expression" required placeholder="say something nice about yourself"
+                rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="insta">instagram handle</label>
+              <input type="text" class="form-control form-input" id="insta" required placeholder="@username" />
+            </div>
+
+            <div class="form-group">
+              <label>upload image</label>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" required />
+
+                <label class="custom-file-label" for="customFile">upload</label>
+              </div>
+            </div>
+            <div class="form-btn">
+
+              <button type="button" id="summit" class="btn general-btn" onclick="makePayment()">pay</button>
+            </div>
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal HTML -->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="icon-box">
+            <i class="material-icons">&#xE876;</i>
+          </div>
+          <h4 class="modal-title">Awesome!</h4>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">Your registration was successfull. contact us on whatapp <a
+              href="https://wa.link/6kebl6"> +234 705 0692 606</a> for more information about the contest.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success btn-block" data-dismiss="modal" onclick=goBack()>Redirect Me</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <div class="container footer">
+    <div class="row justify-content-center">
+      <div class="col-3 text-center">
+        <img src="../assets/img/instagram.png" class="img-fluid" alt="" />
+      </div>
+      <div class="col-3 text-center">
+        <img src="../assets/img/twitter.png" class="img-fluid" alt="" />
+      </div>
+      <div class="col-3 text-center">
+        <img src="../assets/img/facebook.png" class="img-fluid" alt="" />
+      </div>
+    </div>
+    <div class="copywrite">
+      <p>Copyright @topnotch enterteainment</p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+  <script src="https://unpkg.com/izitoast/dist/js/iziToast.min.js"></script>
+  <script src="../js/app.js"></script>
+
+  <script>
+    var loader = document.getElementById("loader")
+    loader.style.display = "none";
+    var ref = Math.floor((Math.random() * 1000000000) + 1)
+    let personalInfo = document.querySelector("#personal-info");
+    let generalInfo = document.querySelector("#general-info");
+    let btn2 = document.querySelector("#summit");
+    let btn = document.querySelector("#continue-btn");
+    let status, name, email, DOB, address, state, country
+    var URL
+    let number, expression, insta
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      status = document.querySelector("#status").value;
+      name = document.querySelector("#name").value;
+      email = document.querySelector("#email").value;
+      DOB = document.querySelector("#DOB").value;
+      address = document.querySelector("#address").value;
+      state = document.querySelector("#state").value;
+      country = document.querySelector("#country").value;
+
+      if (state === '' || status === '' || name === '' || email === '' || DOB === '' || address === '' || country === '') {
+        iziToast.warning({
+          title: 'Warning',
+          message: 'fill all required imformation',
+        });
+
+      } else {
+        personalInfo.style.display = "none";
+        generalInfo.style.display = "block";
+      }
+
+    });
+
+
+    btn2.addEventListener("click", function (e) {
+      e.preventDefault();
+      loader.style.display = "block";
+      number = document.querySelector("#number").value;
+      expression = document.querySelector("#expression").value;
+      insta = document.querySelector("#insta").value;
+
+
+
+
+
+
+    })
+
+    function uploadimage() {
+
+      // Created a Storage Reference with root dir
+      var storageRef = firebase.storage().ref();
+      // Get the file from DOM
+      var file = document.getElementById("customFile").files[0];
+      console.log(file);
+
+      //dynamically set reference to the file name
+      var thisRef = storageRef.child("mostBeautiful/" + name);
+
+      //put request upload file to firebase storage
+      thisRef.put(file).then(function (snapshot) {
+        thisRef.getDownloadURL().then(function (downloadURL) {
+          URL = downloadURL
+          console.log('File available at', URL)
+          upload()
+        });
+
+      });
+    }
+    function upload() {
+
+
+      db.collection("mostBeautiful").add({
+        email: email,
+        fullname: name,
+        state: state,
+        status: status,
+        DOB: DOB,
+        address: address,
+        country: country,
+        expression: expression,
+        number: number,
+        insta: insta,
+        paymentRef: ref,
+        image: URL,
+        payment: "online",
+        vote: 0
+
+
+      })
+        .then(function (docRef) {
+          loader.style.display = "none";
+          jQuery.noConflict();
+          $('#myModal').modal('show');
+
+
+        })
+        .catch(function (error) {
+          console.log(error.message, URL)
+        });
+
+    }
+
+
+    $(".custom-file-input").on("change", function () {
+      var fileName = $(this).val().split("\\").pop();
+      $(this)
+        .siblings(".custom-file-label")
+        .addClass("selected")
+        .html(fileName);
+    });
+
+  </script>
+  <script>
+
+    function makePayment() {
+
+      let handler = PaystackPop.setup({
+        key: 'pk_live_03ae8a1a3828565b4b04ccc87c06ee6c8669471a', // Replace with your public key
+        email: email,
+        amount: 2000 * 100,
+        ref: ref, // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+        // label: "Optional string that replaces customer email"
+        onClose: function () {
+          alert('Window closed.');
+        },
+        callback: function (response) {
+          uploadimage()
+        }
+      });
+      handler.openIframe();
+    }
+
+
+
+    function goBack() {
+      location.replace('https://wa.link/6kebl6');
+    }
+  </script>
+</body>
+
+</html>

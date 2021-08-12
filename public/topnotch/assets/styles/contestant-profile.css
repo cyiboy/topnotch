@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif !important;
+}
+*:focus {
+  box-shadow: none !important;
+}
+textarea {
+  resize: none;
+}
+/* UTILITIES */
+.contest-title {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+  color: rgba(225, 43, 43, 0.83);
+}
+
+.spam{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  
+  color: #000000;
+  
+}
+
+/* Header */
+.navbar-toggler {
+  padding: 0px;
+}
+.navbar-nav {
+  width: 100%;
+}
+.navbar-nav .nav-item {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+.navbar-nav .nav-link {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: black;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+  color: rgba(225, 43, 43, 0.83);
+  text-decoration: underline;
+}
+/* CONTESTANT PROFILE */
+.contestant-profile {
+  margin-bottom: 250px;
+}
+.contestant-profile .contest-title {
+  margin-top: 100px;
+  margin-bottom: 81px;
+}
+.contestant-likes span {
+  color: rgba(225, 43, 43, 0.83);
+}
+.contestant-details p {
+  margin-top: 29px;
+}
+.details-title {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+.details {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+}
+.no-likes {
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: 0.125em;
+}
+.bottons {
+  margin-top: 150px;
+}
+.vote-btn {
+  padding: 23px 30px;
+  background: rgba(225, 43, 43, 0.83);
+  border-radius: 10px;
+  color: white;
+}
+.share-btn {
+  border: 1px solid rgba(225, 43, 43, 0.83);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 23px 30px;
+  background: white;
+  border-radius: 10px;
+  color: black;
+}
+.btn-icon {
+  padding-right: 25px;
+}
+.share-btn {
+  margin-left: 91px;
+}
+/* MODAL */
+.modal-backdrop {
+  background: rgba(225, 43, 43, 0.49);
+}
+.modal-header {
+  border-bottom: none !important;
+  padding-top: 20px;
+}
+.modal-header h5 {
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 41px;
+  color: rgba(225, 43, 43, 0.83);
+}
+.contestant-details .modal-dialog p {
+  margin-top: 20px !important;
+  margin-bottom: 30px;
+}
+.modal-body {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+}
+.modal-body input {
+  border: 1px solid rgba(225, 43, 43, 0.83);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 35px 21px;
+}
+.modal-footer {
+  border-top: none !important;
+}
+.pay-btn {
+  background: rgba(225, 43, 43, 0.83);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  padding: 25px 66px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 91px;
+}
+.copywrite {
+  text-align: center;
+  margin-top: 45px;
+  font-size: 18px;
+  line-height: 21px;
+}
+@media (max-width: 992px) {
+  .details-title {
+    font-size: 19px;
+    text-transform: capitalize;
+  }
+  .details {
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 23px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .navbar {
+    padding: 0px 0px;
+  }
+  .contestant-profile {
+    margin-bottom: 150px;
+  }
+  .details-title {
+    font-size: 17px;
+    text-transform: capitalize;
+  }
+  .details {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 23px;
+  }
+  .share-btn {
+    margin-left: 11px;
+  }
+  .bottons {
+    margin-top: 50px;
+  }
+}
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+}
+
+button, .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #777;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+button:hover, .button:hover {
+  border-color: #cdd;
+}
+
+.share-button, .copy-link {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.share-button, .share-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.share-dialog {
+  display: none;
+  width: 95%;
+  max-width: 500px;
+  box-shadow: 0 8px 16px rgba(0,0,0,.15);
+  z-index: -1;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.share-dialog.is-open {
+  display: block;
+  z-index: 2;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.targets {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.close-button svg {
+  margin-right: 0;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+.pen-url {
+  margin-right: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.loading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+  background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 150ms infinite linear;
+  -moz-animation: spinner 150ms infinite linear;
+  -ms-animation: spinner 150ms infinite linear;
+  -o-animation: spinner 150ms infinite linear;
+  animation: spinner 150ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+}
+
+.show-time p {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.13em;
+  color: rgba(225, 43, 43, 0.83);
+}
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
