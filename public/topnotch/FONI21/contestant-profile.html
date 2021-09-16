@@ -106,7 +106,7 @@
 
     <!-- CONTESTANT -->
     <div class="container contestant-profile">
-      <h3 class="contest-title">Face of Topnotch Entertainment</h3>
+      <h3 class="contest-title">Face of Nigeria Intl</h3>
       <div class="row justify-content-between">
         <div class="col-md-5">
           <div>
@@ -201,7 +201,7 @@
                 </div>
                 <div class="modal-body">
                   <p>
-                    1 point is equal to 50 naira so select the number of point
+                    1 point is equal to 100 naira so select the number of point
                     then vote
                   </p>
                   <input
@@ -216,14 +216,13 @@
                         <option selected>1 point = 100 naira</option>
                         <option >5 point = 500 naira</option>
                         <option>10 point = 1000 naira</option>
-                        <option>20 point = 2000 naira</option>
-                        <option>50 point = 5000 naira</option>
-                        <option>100 point = 8800 naira</option>
-                        <option>200 point = 17000 naira</option>
-                        <option>500 point = 4000 naira</option>
-                        <option>1000 point = 74000 naira</option>
-                        <option>2000 point = 125000 naira</option>
-                    
+                        <option>15 point = 1500 naira</option>
+                        <option>30 point = 2800 naira</option>
+                        <option>50 point = 4500 naira</option>
+                        <option>100 point = 8500 naira</option>
+                        <option>200 point = 16,000 naira</option>
+                        <option>500 point = 40,000 naira</option>
+                        <option>1000 point = 70,000 naira</option>
                      
                       </select>
                     </div>
@@ -352,13 +351,13 @@
       var info = document.getElementById("info")
       var position = document.getElementById("position")
       var image = document.getElementById("image")
-     document.getElementById("urls").innerHTML = "https://everythingtopnotch.com/FOTN/contestant-profile.html?userid=" + id
-      document.getElementById("facebook").href =  "https://www.facebook.com/sharer/sharer.php?u=https://everythingtopnotch.com/FOTN/contestant-profile.html?userid=" + id
-      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on FOT21 https://everythingtopnotch.com/FOTN/contestant-profile.html?userid="+ id
+     document.getElementById("urls").innerHTML = "https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid=" + id
+      document.getElementById("facebook").href =  "https://www.facebook.com/sharer/sharer.php?u=https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid=" + id
+      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on Face Of Nigeria Intl https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid="+ id
       function myfunction() {
   /* Get the text field */
   console.log('i was gere')
-  var copyText =  "https://everythingtopnotch.com/FOTN/contestant-profile.html?userid=" +  id
+  var copyText =  "https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid=" +  id
 
   navigator.clipboard.writeText(copyText).then(function() {
   console.log('Async: Copying to clipboard was successful!');
@@ -374,7 +373,7 @@
   
   
   
-    var docRef = db.collection("FOT21").doc(id);
+    var docRef = db.collection("FONI21").doc(id);
 
 docRef.get().then(function(doc) {
     if (doc.exists) {
@@ -405,7 +404,7 @@ shareButton.addEventListener('click', event => {
   if (navigator.share) { 
    navigator.share({
       title: 'Share profile link',
-      url: "https://everythingtopnotch.com/FOTN/contestant-profile.html?userid=" +  id
+      url: "https://everythingtopnotch.com/Face-of-Nigeria-Intl/contestant-profile.html?userid=" +  id
     }).then(() => {
       console.log('Thanks for sharing!');
     })
@@ -438,34 +437,33 @@ closeButton.addEventListener('click', event => {
     pointnum = 10
     pointprice = 1000
    }
-   if (point === '20 point = 2000 naira'){
-    pointnum = 20
-    pointprice = 2000
+   if (point === '15 point = 1500 naira'){
+    pointnum = 15
+    pointprice = 1500
    }
-   if (point === '50 point = 5000 naira'){
+   if (point === '30 point = 2800 naira'){
+    pointnum = 30
+    pointprice = 2800
+   }
+   if (point === '50 point = 4500 naira'){
     pointnum = 50
-    pointprice = 5000
+    pointprice = 4500
    }
-   if (point === '100 point = 8800 naira'){
+   if (point === '100 point = 8500 naira'){
     pointnum = 100
-    pointprice = 8800
+    pointprice = 8500
    }
-   if (point === '200 point = 17000 naira'){
+   if (point === '200 point = 16,000 naira'){
     pointnum = 200
-    pointprice = 17000
+    pointprice = 16000
    }
-   if (point === '500 point = 40000 naira'){
+   if (point === '500 point = 40,000 naira'){
     pointnum = 500
     pointprice = 40000
    }
-   
-   if (point === '1000 point = 74000 naira'){
+   if (point === '1000 point = 70,000 naira'){
     pointnum = 1000
-    pointprice = 74000
-   }
-   if (point === '2000 point = 125000 naira'){
-    pointnum = 2000
-    pointprice = 125000
+    pointprice = 70000
    }
    
  
@@ -522,8 +520,7 @@ return vote.update({
 function payWithPaystack() {
    
   let handler = PaystackPop.setup({
-    key: 'pk_test_baff8910798b1057b98f719781a1ef2f3ba02cb8', // Replace with your public key
- 
+    key: 'pk_live_03ae8a1a3828565b4b04ccc87c06ee6c8669471a', // Replace with your public key
     email: data.email,
     amount: pointprice * 100,
     ref: ref, // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
@@ -533,7 +530,7 @@ function payWithPaystack() {
     },
     callback: function(response){
       let message = 'Payment complete! Reference: ' + response.reference;
-      var vote = db.collection("FOT21").doc(id);
+      var vote = db.collection("FONI21").doc(id);
 
  return vote.update({
     vote: voted
@@ -555,7 +552,7 @@ successful();
  </script>
   <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Nov 30, 2020 00:00:00").getTime();
+    var countDownDate = new Date("SEPT 30, 2021 00:00:00").getTime();
     
     // Update the count down every 1 second
     var x = setInterval(function() {
