@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/izitoast/dist/css/iziToast.min.css"
+  />
+  <link rel="icon" href="..//..//assets/img/fav.png">
+    <link rel="stylesheet" href="..//..//assets/styles/contestant-profile.css" />
+    <title>Contestant Profile</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <script>
+      let params = new URLSearchParams(location.search);
+      var id = params.get('userid')
+      if (id === null) {
+          window.location.replace("index.html");
+      }
+      
+   
+  </script>
+    <div class="container-fluid pl-0">
+      <div class="row">
+        <div class="col-md-6 pr-0">
+          <nav class="navbar navbar-expand-md">
+            <button
+              class="navbar-toggler ml-auto"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <svg
+                width="106"
+                height="110"
+                viewBox="0 0 106 110"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="22.1069"
+                  width="128.684"
+                  height="128.684"
+                  transform="rotate(-46.9955 0 22.1069)"
+                  fill="#E12B2B"
+                  fill-opacity="0.25"
+                />
+                <path
+                  d="M72.1954 17.2014C68.9897 17.8958 64.0227 20.8472 64.0227 22.0972C64.0227 22.4792 64.9386 22.5833 68.8841 22.5833C72.125 22.5833 73.8863 22.7222 74.1682 23C74.4852 23.3125 74.8022 23.3125 75.4716 23C76.3875 22.5833 87.9772 22.375 87.9772 22.7569C87.9772 23.4861 86.7443 25.0486 86.0397 25.2222C85.5818 25.3264 83.4682 25.4653 81.3897 25.4653L77.5852 25.5347L77.4795 28.5556L77.3738 31.6111H80.8966C84.0318 31.6111 84.4545 31.6806 84.8068 32.2708C85.2295 33.1042 84.9477 33.9375 84.067 34.3889C83.7147 34.5972 82.0943 34.7361 80.4386 34.7361H77.4091V38.0347V41.3333H81.8477H86.3216L87.4841 42.5486L88.6466 43.7639L89.492 42.6528C89.9852 42.0278 90.6897 40.7083 91.1125 39.7708C94.4591 31.8542 91.7113 23.3472 84.525 19.1111C80.65 16.8542 76.7045 16.2639 72.1954 17.2014Z"
+                  fill="white"
+                />
+                <path
+                  d="M60.5352 27.5139C58.3159 33.8333 59.9363 40.5694 64.7624 44.9444C69.2011 49.0069 75.542 50.4306 81.0374 48.5903C84.067 47.5833 87.2727 45.6042 87.2727 44.7361C87.2727 44.5972 84.3136 44.4583 80.7204 44.4583C70.9272 44.4583 71.2795 44.875 71.1386 33.7639L71.0329 25.7083H66.6647C64.2693 25.7083 62.0852 25.6042 61.8034 25.5C61.4159 25.3611 61.0988 25.8819 60.5352 27.5139Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contest.html">contest</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">suprice</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">event planing </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-6 p-0 d-none d-md-inline-block">
+          <div class="position-absolute" style="right: 0px;">
+            <img
+              src="..//..//assets/img/contest-landing-rectangle.png"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTESTANT -->
+    <div class="container contestant-profile">
+      <h3 class="contest-title">Face of Campus Nigeria (2022) Edition</h3>
+      <div class="row justify-content-between">
+        <div class="col-md-5">
+          <div>
+            <img id="image"src="" class="img-fluid" alt="" style="border-radius: 10px; filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.69));"/>
+            <div class="contestant-likes mt-2">
+              <span><i class="fa fa-heart no-likes"></i></span>
+              <span id="like" class="no-likes ml-2"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7 col-lg-6 mt-2 contestant-details">
+          <div>
+            <p>
+              <span  class="details-title">status:</span>
+              <span  id="status" class="deatils"> </span>
+            </p>
+            <p>
+              <span class="details-title">name:</span>
+              <span id="fname" class="deatils"></span>
+            </p>
+            <p>
+              <span class="details-title">country:</span>
+              <span id="country" class="deatils"></span>
+            </p>
+            <p>
+              <span class="details-title">states:</span>
+              <span id="state" class="deatils"></span>
+            </p>
+            <p>
+              <span class="details-title">current position:</span>
+              <span id="position" class="deatils"></span>
+            </p>
+            <div class="row">
+              <div class="col-md-5">
+                <span  class="details-title">about my self:</span>
+              </div>
+
+              <div class="col-md-7">
+                <span id="info" class="deatils"
+                  ></span
+                >
+              </div>
+            </div>
+             
+          </div>
+          <div style="
+          margin-top: 40px;
+      ">
+            <span class="spam">Voting start in:</span>
+          </div>
+        
+          <div class="show-time">
+            <p id="contest-countdown"></p>
+          </div>
+          <div class="bottons text-center">
+            <button
+            id="vote"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              class="btn vote-btn"
+       
+              >
+              <span class="btn-icon"><i class="fa fa-star-o"></i></span>
+              <span>vote</span>
+            </button>
+            <button
+            id="share" class="btn share-btn" style="
+            margin-top: 10px;
+        ">
+              <span class="btn-icon"><i class="fa fa-share-alt"></i></span>
+              <span>share</span>
+            </button>
+          </div>
+
+          <!-- Modal -->
+          <div
+            style="margin-top: 10vh;"
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="text-align: center;">
+                  <h5 class="modal-title mx-auto" id="exampleModalLabel">
+                    Voting in Progress
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    1 point is equal to 100 naira so select the number of point
+                    then vote
+                  </p>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter email "
+                    id="email"
+                  />
+                  <div class="form-group">
+                      <label>point</label>
+                      <select id="point"     class="form-control">
+                        <option selected>1 point = 100 naira</option>
+                        <option >5 point = 500 naira</option>
+                        <option>10 point = 1000 naira</option>
+                        <option>15 point = 1500 naira</option>
+                        <option>30 point = 2800 naira</option>
+                        <option>50 point = 4500 naira</option>
+                        <option>100 point = 8500 naira</option>
+                        <option>200 point = 16,000 naira</option>
+                        <option>500 point = 40,000 naira</option>
+                        <option>1000 point = 70,000 naira</option>
+                     
+                      </select>
+                    </div>
+                </div>
+                <div class="modal-footer mx-auto">
+                    
+                  <script src="https://js.paystack.co/v1/inline.js"></script> 
+                        <button class=" btn pay-btn" type="button"
+                            onclick="makePayment()"> Pay </button>
+                  
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="share-dialog">
+              <header>
+                <h3 class="dialog-title">Share this pen</h3>
+                <button class="close-button"><svg><use href="#close"></use></svg></button>
+              </header>
+              <div class="targets">
+                <a class="button" id="facebook" target="_blank" >
+                  <svg>
+                    <use href="#facebook"></use>
+                  </svg>
+                  <span>Facebook</span>
+                </a>
+                
+                <a class="button" id="whatsapp"   data-action="share/whatsapp/share">
+                  <svg>
+                    <use href="#whatapp"></use>
+                  </svg>
+                  <span>whatsapp</span>
+                </a>
+                
+                
+                
+                <a class="button">
+                  <svg>
+                    <use href="#email"></use>
+                  </svg>
+                  <span>Email</span>
+                </a>
+              </div>
+              <div class="link">
+                <div  id="urls" class="pen-url"></div>
+                <button class="copy-link " onclick="myfunction()">Copy Link</button>
+              </div>
+            </div>
+            
+             
+            
+            <svg class="hidden">
+              <defs>
+                <symbol id="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></symbol>
+                
+                <symbol id="facebook" viewBox="0 0 24 24" fill="#3b5998" stroke="#3b5998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></symbol>
+                
+                <symbol id="twitter" viewBox="0 0 24 24" fill="#1da1f2" stroke="#1da1f2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></symbol>
+                
+                <symbol id="email" viewBox="0 0 24 24" fill="#777" stroke="#fafafa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></symbol>
+                
+                <symbol id="linkedin" viewBox="0 0 24 24" fill="#0077B5" stroke="#0077B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></symbol>
+                
+                <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></symbol>
+              </defs>
+            </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="container footer">
+      <div class="row justify-content-center">
+        <div class="col-3 text-center">
+          <img src="..//assets/img/instagram.png" class="img-fluid" alt="" />
+        </div>
+        <div class="col-3 text-center">
+          <img src="..//assets/img/twitter.png" class="img-fluid" alt="" />
+        </div>
+        <div class="col-3 text-center">
+          <img src="..//assets/img/facebook.png" class="img-fluid" alt="" />
+        </div>
+      </div>
+      <div class="copywrite">
+        <p>Copyright @topnotch enterteainment</p>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/izitoast/dist/js/iziToast.min.js"></script>
+    
+    <script src="../js/app.js"></script> 
+    <script>
+      var data 
+      var email
+      var voten, point
+      var voted 
+      var pointnum 
+   var pointprice
+   var statusId
+      var ref =Math.floor((Math.random() * 1000000000) + 1)
+      var state = document.getElementById("state")
+      var country = document.getElementById("country")
+      var fname = document.getElementById("fname") 
+      var statu = document.getElementById("status")
+      var likes = document.getElementById("like")
+      var info = document.getElementById("info")
+      var position = document.getElementById("position")
+      var image = document.getElementById("image")
+     document.getElementById("urls").innerHTML = "https://everythingtopnotch.com/FOCN2022/contestant-profile.html?userid=" + id
+      document.getElementById("facebook").href =  "https://www.facebook.com/sharer/sharer.php?u=https://everythingtopnotch.com/FOCN2022/contestant-profile.html?userid=" + id
+      document.getElementById("whatsapp").href="whatsapp://send?text= Hey please vote for me on Face of Campus Nigeria (2022) Edition https://everythingtopnotch.com/FOCN2022/contestant-profile.html?userid="+ id
+      function myfunction() {
+  /* Get the text field */
+  console.log('i was gere')
+  var copyText =  "https://everythingtopnotch.com/FOCN2022/contestant-profile.html?userid=" +  id
+
+  navigator.clipboard.writeText(copyText).then(function() {
+  console.log('Async: Copying to clipboard was successful!');
+  iziToast.success({
+        title: 'OK',
+        position: 'topRight',
+        message: ' Copying to clipboard was successful!',
+    });
+}, function(err) {
+  console.error('Async: Could not copy text: ', err);
+});
+}
+  
+  
+  
+    var docRef = db.collection("FOCN2022").doc(id);
+
+docRef.get().then(function(doc) {
+    if (doc.exists) {
+      data= doc.data()
+        console.log("Document data:", doc.data());
+        state.innerHTML = doc.data().state
+        country.innerHTML = doc.data().country
+      fname.innerHTML = doc.data().fullname
+     statu.innerHTML = doc.data().status
+        likes.innerHTML = doc.data().vote
+        voten = doc.data().vote
+       info.innerHTML = doc.data().expression
+      //  position.innerHTML = ' '
+        image.src = doc.data().image
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error.message);
+});
+    
+const shareButton = document.querySelector('.share-btn');
+const shareDialog = document.querySelector('.share-dialog');
+const closeButton = document.querySelector('.close-button');
+
+shareButton.addEventListener('click', event => {
+  if (navigator.share) { 
+   navigator.share({
+      title: 'Share profile link',
+      url: "https://everythingtopnotch.com/FOCN2022/contestant-profile.html?userid=" +  id
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+    .catch(console.error);
+    } else {
+        shareDialog.classList.add('is-open');
+    }
+});
+
+closeButton.addEventListener('click', event => {
+  shareDialog.classList.remove('is-open');
+});
+    
+ </script>
+ <script>
+   
+   function makePayment() {
+          email = document.getElementById("email").value
+   var point = document.getElementById("point").value
+  
+   if (point === '1 point = 100 naira'){
+    pointnum = 1
+    pointprice = 100
+   }
+   if (point === '5 point = 500 naira'){
+    pointnum = 5
+    pointprice = 500
+   }
+   if (point === '10 point = 1000 naira'){
+    pointnum = 10
+    pointprice = 1000
+   }
+   if (point === '15 point = 1500 naira'){
+    pointnum = 15
+    pointprice = 1500
+   }
+   if (point === '30 point = 2800 naira'){
+    pointnum = 30
+    pointprice = 2800
+   }
+   if (point === '50 point = 4500 naira'){
+    pointnum = 50
+    pointprice = 4500
+   }
+   if (point === '100 point = 8500 naira'){
+    pointnum = 100
+    pointprice = 8500
+   }
+   if (point === '200 point = 16,000 naira'){
+    pointnum = 200
+    pointprice = 16000
+   }
+   if (point === '500 point = 40,000 naira'){
+    pointnum = 500
+    pointprice = 40000
+   }
+   if (point === '1000 point = 70,000 naira'){
+    pointnum = 1000
+    pointprice = 70000
+   }
+   
+ 
+
+ var  ff = voten + pointnum   
+ voted = parseInt(ff, 10);  
+  upload()
+  }
+
+  
+  function upload(){
+
+              
+db.collection("voting").add({
+email: data.email,
+voter: email,
+fullname: data.fullname,
+id: id,
+status: 'pending',
+formal: data.vote,
+amount: pointprice,
+new: data.vote+pointnum,
+ref: ref
+
+})
+.then(function(docRef) {
+ statusId= docRef.id
+ payWithPaystack()
+  
+ 
+})
+.catch(function(error) {
+console.log(error.message)
+});
+
+}
+
+    function successful (){
+      var vote = db.collection("voting").doc(statusId);
+
+// Set the "capital" field of the city 'DC'
+return vote.update({
+    status: 'successful'
+})
+.then(function() {
+  location.reload();
+})
+.catch(function(error) {
+    // The document probably doesn't exist.
+    console.error("Error updating document: ", error);
+});
+    }           
+
+function payWithPaystack() {
+   
+  let handler = PaystackPop.setup({
+    key: 'pk_live_03ae8a1a3828565b4b04ccc87c06ee6c8669471a', // Replace with your public key
+    email: data.email,
+    amount: pointprice * 100,
+    ref: ref, // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+    // label: "Optional string that replaces customer email"
+    onClose: function(){
+      alert('Window closed.');
+    },
+    callback: function(response){
+      let message = 'Payment complete! Reference: ' + response.reference;
+      var vote = db.collection("FOCN2022").doc(id);
+
+ return vote.update({
+    vote: voted
+})
+.then(function() {
+successful();
+})
+.catch(function(error) {
+    // The document probably doesn't exist.
+    console.error("Error updating document: ", error);
+});
+      alert(message);
+    }
+  });
+  handler.openIframe();
+ 
+}
+
+ </script>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("SEPT 30, 2021 00:00:00").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("contest-countdown").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("contest-countdown").innerHTML = "Voting is on!!!";
+       
+      }else{
+        document.getElementById('vote').setAttribute('style','display: none')
+   
+      }
+    }, 1000);
+
+
+    </script>
+    
+  </body>
+</html>
